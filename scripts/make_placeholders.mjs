@@ -222,7 +222,17 @@ const renderIcon = (size) => {
 }
 const pwaDir = join(root, 'public/assets/pwa')
 mkdirSync(pwaDir, { recursive: true })
-for (const i of icons) writeFileSync(join(pwaDir, i.file), renderIcon(i.size))
+// 已交件的圖示（不是這支腳本畫出來的 PNG）不覆蓋，做法同上面的佔位 SVG
+const deliveredIcons = new Set()
+for (const i of icons) {
+  const png = renderIcon(i.size)
+  let cur = null
+  try {
+    cur = readFileSync(join(pwaDir, i.file))
+  } catch {}
+  if (cur && !cur.equals(png)) deliveredIcons.add(i.file)
+  else writeFileSync(join(pwaDir, i.file), png)
+}
 
 // ---- 掃 src/ 找出每個素材在程式裡的參照位置（檔案:行號），寫進清單 ----
 const walk = (dir) =>
@@ -285,11 +295,11 @@ ${assets.map((a) => `| \`${a.id}\`${delivered.has(a.id) ? '（已交件）' : ''
 
 ## PWA 圖示（加到手機主畫面）
 
-佔位檔是 PNG（\`public/assets/pwa/<file>\`，由同一支腳本產生）；交件時用同名檔案替換。\`public/manifest.webmanifest\` 與 \`index.html\` 的 \`apple-touch-icon\` 指向這些檔案。
+佔位檔是 PNG（\`public/assets/pwa/<file>\`，由同一支腳本產生）；交件時用同名檔案替換，重跑腳本不會蓋掉。瀏覽器分頁圖示是同資料夾的 \`favicon.svg\`（\`index.html\` 指向它）。\`public/manifest.webmanifest\` 與 \`index.html\` 的 \`apple-touch-icon\` 指向這些檔案。
 
 | 檔名 | 尺寸（px） | 放置位置 | 說明 |
 |---|---|---|---|
-${icons.map((i) => `| \`${i.file}\` | ${i.size}×${i.size} | \`public/assets/pwa/${i.file}\` | ${i.brief} |`).join('\n')}
+${icons.map((i) => `| \`${i.file}\`${deliveredIcons.has(i.file) ? '（已交件）' : ''} | ${i.size}×${i.size} | \`public/assets/pwa/${i.file}\` | ${i.brief} |`).join('\n')}
 
 ## 其他圖片（不是佔位檔）
 
