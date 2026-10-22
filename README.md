@@ -4,6 +4,8 @@
 
 **網址：[https://whisper-trees-demo.southern-light.dev](https://whisper-trees-demo.southern-light.dev)**（市民端只能用手機開；桌機請加 `?demo=1` 進 Demo 模式：模擬定位（可以拖曳地圖上的人物、或點樹按「走過去」移動，離樹太遠一樣會被判「太遠」）、可掃示範樹牌。政府端 `/gov` 用桌機開）
 
+📄 **[提案簡報（PDF，32 頁）](docs/submission/WhisperTrees_proposal.pdf)**：問題與數據、遊戲設計、政府端與預期影響
+
 台北每年移除約 3,164 棵樹。曦語把 16 萬棵行道樹與公園樹變成市民可以停下來、對它說話的「樹洞」；同時讓市民在空樹穴許願、澆水，政府依市民需求與樹蔭缺口排出補種順序，並公開進度。
 
 - 掃公園處樹牌上**現有的 QR Code**，加上 **GPS** 確認人在樹旁，就能打卡。不需要新增任何設施。
