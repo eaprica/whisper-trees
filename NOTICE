@@ -1,0 +1,23 @@
+曦語 Whisper Trees
+Copyright (c) 2026 皮卡愛台灣
+
+LICENSE（MIT）只涵蓋本 repo 的程式碼。以下內容不在 MIT 範圍內：
+
+1. 美術：保留所有權利，版權屬各作者，未經同意不得使用。
+   包括 public/assets/ 底下交件的美術（動物、樹的大圖、小芽、商店道具與相框、小圖示、
+   App 圖示與分頁圖示、隊員頭像、樹牌照片）與 material/art/、material/samples/。
+   各項的作者與來源見 README「授權」。fork 時請換成自己的圖。
+
+2. 資料：沿用各自原本的授權。
+   - 臺北市政府等政府開放資料：政府資料開放授權條款第 1 版 https://data.gov.tw/license
+   - OpenStreetMap 資料：ODbL 1.0，© OpenStreetMap contributors
+   - iNaturalist 樹種照片：各張的 CC0 或 CC BY，版權屬各攝影者（material/raw/inat/manifest.json）
+
+3. 使用的開源套件：依各自的授權（見 README「使用的開源套件與 AI 工具」）。
+
+---
+
+The MIT License in LICENSE covers the source code only.
+Artwork (see the list above and README) is all rights reserved by its authors.
+Data keeps its original licences: Taiwan Open Government Data License v1.0,
+ODbL 1.0 for OpenStreetMap data, and CC0 / CC BY for the iNaturalist photos.

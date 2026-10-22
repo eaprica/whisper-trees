@@ -190,7 +190,7 @@
 
 ## 授權
 
-- **程式碼**：[MIT](LICENSE)，© 2026 皮卡愛台灣。
+- **程式碼**：[MIT](LICENSE)，© 2026 皮卡愛台灣。MIT 只涵蓋程式碼，美術與資料見下面兩項與 [NOTICE](NOTICE)。
 - **資料**不在 MIT 範圍內，沿用各自原本的授權：政府開放資料依[政府資料開放授權條款第 1 版](https://data.gov.tw/license)；OpenStreetMap 資料依 [ODbL 1.0](https://opendatacommons.org/licenses/odbl/)（© OpenStreetMap contributors）；iNaturalist 樹種照片依各張的 CC0 或 CC BY，版權屬各攝影者（逐張記在 `material/raw/inat/manifest.json`）。詳見上方「資料：哪些是真的、哪些是模擬的」。
 - **美術**不在 MIT 範圍內，**保留所有權利**，版權屬各作者；未經同意不得使用。fork 程式時請換成自己的圖。來源：
   - 臺灣黑狗（地圖上的你）：愛皮卡手工繪製、切圖（分層原檔在 `material/art/tw-black-dog/`）；走路動畫由 Claude Code 依分層組合（`scripts/build_dog_avatar.py`）。
