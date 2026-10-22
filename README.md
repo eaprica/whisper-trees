@@ -197,10 +197,11 @@
 - **美術**不在 MIT 範圍內，**保留所有權利**，版權屬各作者；未經同意不得使用。fork 程式時請換成自己的圖。來源：
   - 臺灣黑狗（地圖上的你）：愛皮卡手工繪製、切圖（分層原檔在 `material/art/tw-black-dog/`）；走路動畫由 Claude Code 依分層組合（`scripts/build_dog_avatar.py`）。
   - 石虎、臺灣藍鵲、黑冠麻鷺、穿山甲：+1 用 ChatGPT 產生。
-  - 樹的頁面大圖（日／夜）、拉近畫面的大樹、小芽三個階段、商店的造型與相框、頁首字標：Google Gemini 產生。
-  - Logo（App 圖示、瀏覽器分頁圖示）：愛皮卡設計。
+  - 樹的頁面大圖（日／夜）、拉近畫面的大樹、小芽三個階段、商店的造型與相框：Google Gemini 產生。
+  - 頁首字標：愛皮卡提出日月合體構想，Claude 以 SVG 繪製。
   - 徽章、集章、樹上住戶、樹苗、澆水壺、空樹穴、樹牌示意、樹種卡、地圖上的樹與花、空狀態等小圖示：由 Claude Code 以 SVG 繪製。
   - 「關於曦語」的隊員頭像：各隊員提供，版權屬各人。
+  - 提案簡報（`docs/submission/WhisperTrees_proposal.pdf`）與投稿封面（`docs/submission/cover-4x3.png`）：保留所有權利，未經同意不得使用。
   - 樹牌照片（`material/samples/`、掃描頁）：隊員實拍。
   - 還沒交件的美術是 `scripts/make_placeholders.mjs` 產生的佔位檔，清單見 [docs/ui-assets.md](docs/ui-assets.md)。
 - 使用的開源套件依各自的授權，見下方「使用的開源套件與 AI 工具」。
