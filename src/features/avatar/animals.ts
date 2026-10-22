@@ -11,10 +11,12 @@ export interface Animal {
   art: string
   /** 一句話，給選擇畫面 */
   blurb: string
+  /** 走路循環（面向右，和 art 同一個畫框）；有的動物位置一變會走過去，沒有的直接換位置 */
+  walkArt?: string
 }
 
 export const ANIMALS: Animal[] = [
-  { id: 'taiwan-dog', name: '臺灣黑狗', art: 'avatar-taiwan-dog', blurb: '開朗樂天，開心時繞圈搖鐮刀尾' },
+  { id: 'taiwan-dog', name: '臺灣黑狗', art: 'avatar-taiwan-dog', walkArt: 'avatar-taiwan-dog-walk', blurb: '開朗樂天，開心時繞圈搖鐮刀尾' },
   { id: 'leopard-cat', name: '石虎', art: 'avatar-leopard-cat', blurb: '冷淡的觀察家，安靜坐在樹下' },
   { id: 'blue-magpie', name: '臺灣藍鵲', art: 'avatar-blue-magpie', blurb: '火爆脾氣，有人闖進領域就飛來巴頭' },
   { id: 'malayan-night-heron', name: '黑冠麻鷺', art: 'avatar-malayan-night-heron', blurb: '呆萌的大笨鳥，常在草地上定格發呆' },

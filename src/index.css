@@ -3296,6 +3296,11 @@ html:has(.tab-shell) {
   cursor: grabbing;
 }
 
+/* 往左走時水平翻轉（美術面向右）；走路與站著同一個畫框，換圖時不會跳 */
+.me-avatar[data-facing='left'] img {
+  transform: scaleX(-1);
+}
+
 .me-avatar img {
   display: block;
   width: 100%;
@@ -3622,6 +3627,21 @@ html:has(.tab-shell) {
   width: 84px;
   height: auto;
   pointer-events: none;
+}
+
+/* 打開拉近畫面時從左邊走進來（走路美術，WALK_IN_MS 與這裡同長） */
+.tree-focus-animal.walking-in {
+  animation: focus-walk-in 1.4s linear both;
+}
+
+@keyframes focus-walk-in {
+  from {
+    transform: translateX(-260px);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
 }
 
 .tree-focus-bar {

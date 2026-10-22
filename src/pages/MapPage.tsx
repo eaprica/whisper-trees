@@ -21,7 +21,7 @@ import { assetUrl } from '../assets'
 import { EventBar } from '../features/game/EventBar'
 import { firstLightEarned, newcomerDone, showTasksChip, tasks } from '../features/game/onboarding'
 import { TourSheet, useTourView } from '../features/onboarding/TourSheet'
-import { useAnchor } from '../features/map/useAnchor'
+import { useAnchor, type Anchor } from '../features/map/useAnchor'
 import { circleRing } from '../lib/nearby'
 import { angleDiff, requestHeadingPermission, watchHeading } from '../features/map/heading'
 import { ringRadius, treesInRing } from '../features/map/ring'
@@ -31,6 +31,7 @@ import { BalanceChip } from '../features/nav/BalanceChip'
 import { BUILDING_3D_PAINT, firstLabelLayerId, toneBasemap } from '../features/map/basemapTone'
 import { setScanHint } from '../features/nav/scanHint'
 import { useAnimal } from '../features/avatar/useAnimal'
+import { facingFor, walkAt, walkDurationMs, type Facing } from '../features/avatar/walk'
 import { TreeFocusView } from '../features/map/TreeFocusView'
 import type { FocusAfterScan } from './ScanPage'
 import { rangeInfo, TREE_FOCUS } from '../features/map/treeRings'
@@ -561,14 +562,17 @@ export default function MapPage() {
     } else if (centeredOn.current !== key) {
       // 進附近模式、或人移動了：鏡頭移到新的中心。進附近模式用預設街景縮放；人走動時保留使用者目前的縮放（至少 minZoom）。
       // 上一段動畫可能被打斷，所以角度用「至少」而不是沿用目前值
+      // 人物用走的過去時，鏡頭跟著牠等速移動（同樣的時間、線性），牠才一直在畫面中間
       const entering = centeredOn.current === null
       centeredOn.current = key
+      const walkMs = entering ? 0 : avatarWalk(anchor).ms
       m.easeTo({
         center: anchor.lngLat,
         zoom: entering ? NEAR.zoom : Math.max(m.getZoom(), NEAR.minZoom),
         pitch: m.getPitch() < 30 ? NEAR.pitch : m.getPitch(),
         bearing: m.getPitch() < 30 ? NEAR.bearing : m.getBearing(),
-        duration: 700,
+        duration: walkMs || 700,
+        ...(walkMs ? { easing: (t: number) => t } : {}),
       })
       // 動畫結束才鎖範圍，並用最新的中心（避免被打斷的動畫拿到舊位置）
       m.once('moveend', () => {
@@ -591,6 +595,16 @@ export default function MapPage() {
   // Demo：可以拖曳（滑鼠與觸控都行，拖曳人物不會平移地圖），放開時模擬位置移到那裡，感應圈、範圍、提示都跟著重算
   const draggable = demo && anchor.source === 'demo'
   const showDragHint = draggable && dragHint && !sheet && !tour.open && !treeFocus
+  // 人物位置一變就走過去（有走路美術的動物）：avatarAt 是畫面上人物現在站的位置，走到一半換目標就從那裡接著走
+  const avatarAt = useRef<{ lngLat: LngLat; source: string } | null>(null)
+  const avatarFacing = useRef<Facing>('right')
+  /** 人物要從哪裡走到 anchor、走多久；from = null 或 ms = 0 是直接換位置
+   * （換了來源〔沒有定位 → GPS〕、剛載入的預設位置、沒有走路美術、減少動態、距離太近或太遠） */
+  function avatarWalk(to: Anchor): { from: LngLat | null; ms: number } {
+    const prev = avatarAt.current
+    const from = animal.walkArt && prev && prev.source === to.source && prev.lngLat.join() !== DEMO.center.join() ? prev.lngLat : null
+    return { from, ms: from ? motionMs(walkDurationMs(from, to.lngLat)) : 0 }
+  }
   useEffect(() => {
     const m = map.current
     if (!m || !ready) return
@@ -602,10 +616,22 @@ export default function MapPage() {
     node.setAttribute('role', 'img')
     node.setAttribute('aria-label', `你在這裡：${animal.name}`)
     const img = document.createElement('img')
-    img.src = assetUrl(animal.art)
+    const standSrc = assetUrl(animal.art)
+    const walkSrc = animal.walkArt ? assetUrl(animal.walkArt) : null
+    img.src = standSrc
     img.alt = ''
     img.draggable = false
     node.append(img)
+    const face = (f: Facing) => {
+      avatarFacing.current = f
+      node.dataset.facing = f
+    }
+    face(avatarFacing.current)
+    const walking = (on: boolean) => {
+      if (!walkSrc) return
+      img.src = on ? walkSrc : standSrc
+      node.dataset.walking = String(on)
+    }
     if (anchor.source !== 'gps') {
       // Demo／沒有定位：小字標示這是示範位置
       const tag = document.createElement('span')
@@ -639,16 +665,51 @@ export default function MapPage() {
       hint.append(text, close)
       node.append(hint)
     }
-    const marker = new maplibregl.Marker({ element: node, anchor: 'bottom', draggable }).setLngLat(anchor.lngLat).addTo(m)
+    // 從上次站的位置走過來（鏡頭在上面的 effect 用同樣的時間跟著走）
+    const to = anchor.lngLat
+    const { from, ms } = avatarWalk(anchor)
+    const marker = new maplibregl.Marker({ element: node, anchor: 'bottom', draggable }).setLngLat(ms && from ? from : to).addTo(m)
+    let raf = 0
+    if (ms && from) {
+      face(facingFor(m.project(from).x, m.project(to).x, avatarFacing.current))
+      walking(true)
+      const t0 = performance.now()
+      const step = (now: number) => {
+        const t = (now - t0) / ms
+        const at = walkAt(from, to, t)
+        marker.setLngLat(at)
+        avatarAt.current = { lngLat: at, source: anchor.source }
+        if (t < 1) raf = requestAnimationFrame(step)
+        else walking(false)
+      }
+      raf = requestAnimationFrame(step)
+    } else {
+      avatarAt.current = { lngLat: to, source: anchor.source }
+    }
     if (draggable) {
+      // 拖曳時也是走的：跟著手指的方向轉身
+      let lastX: number | null = null
+      marker.on('dragstart', () => {
+        cancelAnimationFrame(raf)
+        lastX = null
+        walking(true)
+      })
+      marker.on('drag', () => {
+        const x = m.project(marker.getLngLat()).x
+        if (lastX !== null) face(facingFor(lastX, x, avatarFacing.current))
+        lastX = x
+      })
       marker.on('dragend', () => {
         const at = marker.getLngLat()
+        walking(false)
+        avatarAt.current = { lngLat: [at.lng, at.lat], source: anchor.source } // 已經站在那裡了，不用再走一次
         dismissDemoHint()
         setDragHint(false)
         setDemoPosition([at.lng, at.lat])
       })
     }
     return () => {
+      cancelAnimationFrame(raf)
       marker.remove()
     }
   }, [ready, anchor.lngLat, anchor.source, animal, draggable, showDragHint])

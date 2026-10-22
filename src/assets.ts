@@ -52,6 +52,7 @@ export const ASSETS: AssetSpec[] = [
   { id: 'stamp-silver', w: 120, h: 120, where: '集章冊', brief: '行政區集章：銀章（50 棵）' },
   { id: 'stamp-gold', w: 120, h: 120, where: '集章冊', brief: '行政區集章：金章（200 棵）' },
   { id: 'avatar-taiwan-dog', w: 96, h: 96, where: '地圖上代表你、新手引導、我的', brief: '地圖人物：臺灣黑狗（預設）。開朗樂天，鐮刀尾是招牌。2.5D 繪本風的小動物站著、正面朝向鏡頭，透明背景，腳底在圖的下緣中央（地圖定位點）。五隻動物都帶著同一片發光葉子，點狀眼睛、臉部留白。' },
+  { id: 'avatar-taiwan-dog-walk', w: 96, h: 96, where: '地圖上人物移動時、拉近畫面走到樹下', brief: '臺灣黑狗的走路循環（面向右，往左走時畫面水平翻轉）。和 avatar-taiwan-dog 同一個畫框，腳底在下緣。由 scripts/build_dog_avatar.py 從 material/art/tw-black-dog/ 產生，不手改。' },
   { id: 'avatar-leopard-cat', w: 96, h: 96, where: '地圖上代表你、新手引導、我的', brief: '地圖人物：石虎。冷淡的觀察家，耳後白斑是招牌。規格同上。五隻動物都帶著同一片發光葉子，點狀眼睛、臉部留白。' },
   { id: 'avatar-blue-magpie', w: 96, h: 96, where: '地圖上代表你、新手引導、我的', brief: '地圖人物：臺灣藍鵲。火爆脾氣，長尾巴。規格同上。五隻動物都帶著同一片發光葉子，點狀眼睛、臉部留白。' },
   { id: 'avatar-malayan-night-heron', w: 96, h: 96, where: '地圖上代表你、新手引導、我的', brief: '地圖人物：黑冠麻鷺。呆萌的大笨鳥，常定格發呆、偶爾歪頭。規格同上。五隻動物都帶著同一片發光葉子，點狀眼睛、臉部留白。' },

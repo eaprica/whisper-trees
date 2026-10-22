@@ -47,6 +47,7 @@
 - `material/processed/`：`scripts/merge_treepits.py`、`scripts/match_parks_osm.py` 的輸出。
 - `material/raw/inat/`：iNaturalist 樹種照片（2026-10-20，只收 CC0 與 CC BY，逐張記在 `manifest.json`）。不要手動增減照片；要換就改 `scripts/fetch_inat_photos.py` 再重跑。授權規則不可放寬（不收 NC / SA / ND）。
 - `material/samples/tree-tag-SL0560111023.jpg`：真實樹牌照片，掃碼的測試素材。
+- `material/art/tw-black-dog/`：設計交的臺灣黑狗分層 SVG（2026-10-22）。地圖人物的站姿與走路循環由 `scripts/build_dog_avatar.py` 產生，不要手改 `public/assets/ph/avatar-taiwan-dog*.svg`。
 - 樹籍編號 `TreeID` 要整串比對，有 4,219 筆帶 `-001` 這類後綴。
 
 ## 指令
@@ -66,6 +67,7 @@ uv run scripts/build_admin_outline.py   # 產生 public/data/taipei-outline.json
 uv run scripts/fetch_villages.py   # 下載內政部村里界到 material/raw/village/village.zip（只在要更新時跑）
 uv run scripts/build_villages.py   # 產生 public/data/villages/<前綴>.json（456 里的界線與每里樹數）；加 --check 只檢查
 uv run scripts/build_road_graph.py # 產生 public/data/roads/<前綴>.json（步行路網，來自 OSM 具名道路；需要先有 villages）；加 --check 只檢查
+uv run scripts/build_dog_avatar.py  # 臺灣黑狗的站姿與走路循環（material/art/tw-black-dog/ → public/assets/ph/avatar-taiwan-dog{,-walk}.svg）；加 --check 只檢查
 ```
 
 前端：

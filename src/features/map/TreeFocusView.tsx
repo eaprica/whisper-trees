@@ -20,6 +20,8 @@ const ICON: Record<FocusActionId, ReactNode> = {
 
 /** 提示浮在畫面上多久（毫秒） */
 export const NOTE_MS = 4000
+/** 動物從畫面左邊走到樹下要多久（毫秒）；和 .tree-focus-animal.walking-in 的動畫一樣長 */
+export const WALK_IN_MS = 1400
 
 interface Props {
   tree: Tree
@@ -65,6 +67,16 @@ export function TreeFocusView({ tree, range, checkedIn, animal, demo, onClose, i
   }, [note])
   useEffect(() => setCard(null), [tree.id])
   const reward = intro?.reward ?? null
+  // 打開拉近畫面、按「走過去」走進感應圈時，有走路美術的動物從左邊走到樹下（掃樹牌回來、減少動態時直接站好）
+  const [walkingIn, setWalkingIn] = useState(false)
+  useEffect(() => {
+    const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+    if (!animal.walkArt || intro || reduce) return setWalkingIn(false)
+    setWalkingIn(true)
+    const t = setTimeout(() => setWalkingIn(false), WALK_IN_MS)
+    return () => clearTimeout(t)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tree.id, animal.walkArt, range.inRange])
   const finishIntro = () => {
     if (intro?.openCard) setCard(intro.openCard)
     onIntroDone()
@@ -100,7 +112,11 @@ export function TreeFocusView({ tree, range, checkedIn, animal, demo, onClose, i
       <div className="tree-focus-stage">
         <Art id="tree-focus" alt="" className="tree-focus-art" />
         {/* 你的動物站在樹下 */}
-        <Art id={animal.art} alt={`你在這裡：${animal.name}`} className="tree-focus-animal" />
+        <Art
+          id={walkingIn && animal.walkArt ? animal.walkArt : animal.art}
+          alt={`你在這裡：${animal.name}`}
+          className={`tree-focus-animal${walkingIn ? ' walking-in' : ''}`}
+        />
         <p className="tree-focus-note" role="status" data-testid="focus-note">
           {note.text}
         </p>

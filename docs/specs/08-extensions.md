@@ -245,7 +245,7 @@ scope 清單只定義在 `src/features/api/scopes.ts`，API 與 MCP 都引用它
 | 3 | 第一次拿到光點：慶祝徽章「第一道光」＋新手禮橡實帽（連到 `/me` 換上、`/shop`）。拿到第一道光就直接跳到這一步 |
 | 4 | 加到主畫面：沒綁 Google 的先建議「用 Google 保留紀錄」（說明 iOS 主畫面 App 的儲存空間和 Safari 分開），再給說明。三個可切換的分頁（`tour-install-tabs`）：「iPhone（Safari）」「iPhone（Chrome）」「Android」，預設打開偵測到的那一個（`defaultInstallGuide`；電腦與內建瀏覽器先開 iPhone Safari）。iPhone Safari：點下方「分享」（沒看到就先點「⋯」再點「分享」，iOS 26）→ 分享選單往上滑、往下找「加入主畫面」→ 右上角「新增」；iPhone Chrome：網址列右邊「分享」→「加入主畫面」→「新增」；Android Chrome 有 `beforeinstallprompt` 就給「安裝到主畫面」按鈕（`main.tsx` 一開始就接住事件），否則「⋮」→「加到主畫面／安裝應用程式」，另附三星瀏覽器一行。電腦上多一個網站的 QR Code（`tour-install-qr`），用手機掃了再照做。App 內建瀏覽器（LINE、Threads…）先提示改用 Safari／Chrome 開啟（見 [00](00-overview.md)「App 內建瀏覽器」）。「我加好了」走完 |
 
-**陪你的動物**：地圖上代表你的小動物，五隻，各有個性；單一來源 `src/features/avatar/animals.ts`，名稱用「臺」跟全站一致。個性目前只是選擇畫面的一句話（`/me` 頂部顯示目前這隻的那一句），動畫是 P2。
+**陪你的動物**：地圖上代表你的小動物，五隻，各有個性；單一來源 `src/features/avatar/animals.ts`，名稱用「臺」跟全站一致。個性目前只是選擇畫面的一句話（`/me` 頂部顯示目前這隻的那一句）。**走路動畫是 P1**（2026-10-22 決定，原本整個動畫是 P2）：臺灣黑狗位置一變就在地圖上走過去、拉近畫面裡走到樹下（見 [02](02-map.md)「人物＝你選的動物」與拉近畫面）；其他四隻還沒有走路美術，直接換位置。個性的動畫（繞圈搖尾、捲成球…）仍是 P2。
 
 | id | 名稱 | 個性（一句話） |
 |---|---|---|
