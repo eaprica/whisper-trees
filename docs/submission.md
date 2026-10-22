@@ -35,14 +35,20 @@
 
 ### 封面圖
 
-一張。截圖在 [`submission/`](submission/)（Demo 模式、本機資料，截圖時隱藏了 Demo 標示）：
+一張：**[`cover-4x3.png`](submission/cover-4x3.png)**（1200×900，符合連儂牆建議的 4:3）。
+
+其他截圖在 [`submission/`](submission/)（Demo 模式、本機資料，截圖時隱藏了 Demo 標示）：
 
 | 檔案 | 畫面 | 尺寸 |
 |---|---|---|
-| [`cover-tree-focus.png`](submission/cover-tree-focus.png) | **建議當封面**：點樹之後的拉近畫面，大樹上是摸摸樹、回報、留言在樹洞，你的動物站在樹下 | 1170×2532（手機 390×844 的 3 倍） |
+| [`cover-tree-focus.png`](submission/cover-tree-focus.png) | 點樹之後的拉近畫面，大樹上是摸摸樹、回報、留言在樹洞，你的動物站在樹下 | 1170×2532（手機 390×844 的 3 倍） |
 | [`street-map.png`](submission/street-map.png) | 拉近後的街景：每棵樹站起來，感應圈內綠、圈外灰藍綠，今天摸過的樹腳邊長小花 | 1170×2532 |
 | [`touch-done.png`](submission/touch-done.png) | 摸摸樹做完：收進光點、選現在的心情 | 1170×2532 |
 | [`gov-console.png`](submission/gov-console.png) | 政府端：補種優先排序與權重滑桿、案件狀態 | 2560×1600（桌機 1280×800 的 2 倍） |
+
+### 提案簡報
+
+[`WhisperTrees_proposal.pdf`](submission/WhisperTrees_proposal.pdf)（32 頁）
 
 ### 作品介紹（可直接貼上）
 
