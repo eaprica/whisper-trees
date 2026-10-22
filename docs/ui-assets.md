@@ -130,3 +130,7 @@
 | `public/assets/ph-debug/watering.svg` | （尚未使用） |
 | `public/assets/ph-debug/wish-empty.svg` | （尚未使用） |
 | `public/assets/photo/tree-tag.jpg` | `src/features/checkin/Scanner.tsx:181` |
+| `public/assets/team/epica.webp` | `src/features/about/about.ts:27` |
+| `public/assets/team/mint.webp` | `src/features/about/about.ts:51` |
+| `public/assets/team/plus1.webp` | `src/features/about/about.ts:43` |
+| `public/assets/team/ray.webp` | `src/features/about/about.ts:35` |
