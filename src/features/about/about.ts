@@ -24,6 +24,7 @@ export const TEAM_SUMMARY = '6 位隊員・設計 2・工程 3・計畫管理 1'
 export const TEAM: readonly TeamMember[] = [
   {
     initial: '愛',
+    avatar: '/assets/team/epica.webp',
     name: '愛皮卡',
     title: '概念發起人',
     role: '發想曦語的遊戲概念與世界觀，第一人稱玩家角色設計，UI/UX 介面設計',

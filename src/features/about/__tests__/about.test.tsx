@@ -30,13 +30,14 @@ describe('關於曦語', () => {
     for (const m of TEAM) expect(m.skills).toBeTruthy()
     expect(html).not.toContain('佳宜')
   })
-  it('Ray、+1、薄荷的徽章是頭像，愛皮卡是一個字', () => {
+  it('4 位的徽章都是頭像', () => {
     expect(TEAM.filter((m) => m.avatar).map((m) => [m.name, m.avatar])).toEqual([
+      ['愛皮卡', '/assets/team/epica.webp'],
       ['Ray', '/assets/team/ray.webp'],
       ['+1', '/assets/team/plus1.webp'],
       ['薄荷', '/assets/team/mint.webp'],
     ])
-    expect(html.match(/class="team-avatar"/g)).toHaveLength(3)
+    expect(html.match(/class="team-avatar"/g)).toHaveLength(4)
     expect(html).toMatch(/<img class="team-avatar" src="\/assets\/team\/ray\.webp" alt=""/)
   })
   it('其他協力人員只列名字，沒有職稱與介紹', () => {
