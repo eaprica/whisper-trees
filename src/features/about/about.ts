@@ -57,7 +57,7 @@ export const TEAM: readonly TeamMember[] = [
 ]
 
 /** 其他協力人員：只列名字，沒有卡片與介紹 */
-export const OTHER_CONTRIBUTORS: readonly string[] = ['Mars／瑪斯', '克洛伊伊', 'EazyFun']
+export const OTHER_CONTRIBUTORS: readonly string[] = ['Mars／瑪斯', '克洛伊伊', 'EasyFun']
 
 export const BRAND_SPIRIT = [
   { name: '慢下來', line: '不刷步數，邀請市民停下腳步，與一棵樹好好相處。' },

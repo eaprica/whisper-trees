@@ -41,9 +41,9 @@ describe('關於曦語', () => {
     expect(html).toMatch(/<img class="team-avatar" src="\/assets\/team\/ray\.webp" alt=""/)
   })
   it('其他協力人員只列名字，沒有職稱與介紹', () => {
-    expect(OTHER_CONTRIBUTORS).toEqual(['Mars／瑪斯', '克洛伊伊', 'EazyFun'])
+    expect(OTHER_CONTRIBUTORS).toEqual(['Mars／瑪斯', '克洛伊伊', 'EasyFun'])
     expect(html).toContain('其他協力人員')
-    expect(html).toMatch(/data-testid="team-others"[^>]*>Mars／瑪斯・克洛伊伊・EazyFun</)
+    expect(html).toMatch(/data-testid="team-others"[^>]*>Mars／瑪斯・克洛伊伊・EasyFun</)
     for (const s of ['計畫管理師', 'UI/UX 設計師', '公園處圖資', 'Figma']) expect(html).not.toContain(s)
   })
   it('一般的「台北」寫成「臺北」，只有專有名稱保留「台北」', () => {
