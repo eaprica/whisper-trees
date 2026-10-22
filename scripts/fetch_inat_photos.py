@@ -44,7 +44,7 @@ CACHE = OUT / "_cache"
 MANIFEST = OUT / "manifest.json"
 
 API = "https://api.inaturalist.org/v1"
-UA = "WhisperTreesDemo/0.1 (Taipei city debug hackathon, species photos for a demo; contact vfgcees@gmail.com)"
+UA = "WhisperTreesDemo/0.1 (Taipei city debug hackathon, species photos for a demo; https://github.com/redtear1115/whisper-trees-demo)"
 MIN_INTERVAL = 1.1  # seconds between API requests (iNaturalist asks for <= 1/s)
 TAIWAN_PLACE_ID = 7887  # /v1/places/autocomplete?q=Taiwan -> id 7887 "Taiwan" (country; 7888 is a smaller region)
 LICENCES = ("cc0", "cc-by")
