@@ -6,10 +6,10 @@ export interface TeamMember {
   initial: string
   name: string
   title: string
-  /** 在本案做了什麼（一行） */
-  role: string
-  /** 專長，用「・」分隔 */
-  skills: string
+  /** 在本案做了什麼（一行）；還沒寫的就不顯示 */
+  role?: string
+  /** 專長，用「・」分隔；還沒寫的就不顯示 */
+  skills?: string
 }
 
 export const TEAM_TAGLINE = '從概念、插畫、數據到打卡機制，一隊打通。'
@@ -35,11 +35,10 @@ export const TEAM: readonly TeamMember[] = [
     skills: '軟體工程・雲端系統架構・開發流程',
   },
   {
-    initial: '佳',
-    name: '佳宜',
-    title: '韌體工程師',
-    role: '評估樹牌打卡方案（NFC 與 QR Code）',
-    skills: 'MCU・穿戴裝置・藍牙・心率與陀螺儀感測',
+    initial: '+1',
+    name: '+1',
+    title: '軟韌體工程師',
+    // 自我介紹還沒定，先只放名字與職稱
   },
   {
     initial: '薄',

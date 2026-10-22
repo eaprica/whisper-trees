@@ -11,9 +11,9 @@ const html = renderToStaticMarkup(
 )
 
 describe('關於曦語', () => {
-  it('隊員卡 4 張，圓形徽章的字是 愛 R 佳 薄', () => {
+  it('隊員卡 4 張，圓形徽章的字是 愛 R +1 薄', () => {
     expect(TEAM).toHaveLength(4)
-    expect(TEAM.map((m) => m.initial)).toEqual(['愛', 'R', '佳', '薄'])
+    expect(TEAM.map((m) => m.initial)).toEqual(['愛', 'R', '+1', '薄'])
     expect(html.match(/data-testid="team-member"/g)).toHaveLength(4)
     for (const m of TEAM) {
       expect(html).toContain(m.name)
@@ -24,10 +24,13 @@ describe('關於曦語', () => {
     expect(TEAM.map((m) => [m.name, m.title, m.role])).toEqual([
       ['愛皮卡', '概念發起人', '發想曦語的遊戲概念、世界觀與蠟筆繪本畫風'],
       ['Ray', '軟體工程師', '整理臺北市樹木開放資料，做出這個網頁 Demo'],
-      ['佳宜', '韌體工程師', '評估樹牌打卡方案（NFC 與 QR Code）'],
+      ['+1', '軟韌體工程師', undefined],
       ['薄荷', '後端工程師・專案經理', '評估樹牌打卡方案，畫出遊戲操作流程'],
     ])
-    for (const m of TEAM) expect(m.skills).toBeTruthy()
+    for (const m of TEAM) expect(Boolean(m.skills)).toBe(Boolean(m.role))
+    // 自我介紹還沒定的人不留空白段落
+    expect(html).not.toMatch(/<p class="team-role"><\/p>|<p class="muted small team-skills"><\/p>/)
+    expect(html).not.toContain('佳宜')
   })
   it('其他協力人員只列名字，沒有職稱與介紹', () => {
     expect(OTHER_CONTRIBUTORS).toEqual(['Mars／瑪斯', '克洛伊伊'])

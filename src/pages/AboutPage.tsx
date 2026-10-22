@@ -61,8 +61,8 @@ export default function AboutPage() {
               <div className="team-body">
                 <h3 className="team-name">{m.name}</h3>
                 <p className="team-title">{m.title}</p>
-                <p className="team-role">{m.role}</p>
-                <p className="muted small team-skills">{m.skills}</p>
+                {m.role && <p className="team-role">{m.role}</p>}
+                {m.skills && <p className="muted small team-skills">{m.skills}</p>}
               </div>
             </li>
           ))}
