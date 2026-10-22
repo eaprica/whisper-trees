@@ -39,12 +39,14 @@ export const TEAM: readonly TeamMember[] = [
   },
   {
     initial: '+1',
+    avatar: '/assets/team/plus1.webp',
     name: '+1',
     title: '軟韌體工程師',
     // 自我介紹還沒定，先只放名字與職稱
   },
   {
     initial: '薄',
+    avatar: '/assets/team/mint.webp',
     name: '薄荷',
     title: '後端工程師・專案經理',
     role: '評估樹牌打卡方案，畫出遊戲操作流程',
