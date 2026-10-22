@@ -24,12 +24,10 @@ describe('關於曦語', () => {
     expect(TEAM.map((m) => [m.name, m.title, m.role])).toEqual([
       ['愛皮卡', '概念發起人', '發想曦語的遊戲概念與世界觀，第一人稱玩家角色設計，UI/UX 介面設計'],
       ['Ray', '軟體工程師', '整理臺北市樹木開放資料，做出這個網頁 Demo'],
-      ['+1', '軟韌體工程師', undefined],
+      ['+1', '軟韌體工程師', '實體樹牌方案分析、資料流程更新與確認'],
       ['薄荷', '後端工程師・專案經理', '評估樹牌打卡方案，畫出遊戲操作流程'],
     ])
-    for (const m of TEAM) expect(Boolean(m.skills)).toBe(Boolean(m.role))
-    // 自我介紹還沒定的人不留空白段落
-    expect(html).not.toMatch(/<p class="team-role"><\/p>|<p class="muted small team-skills"><\/p>/)
+    for (const m of TEAM) expect(m.skills).toBeTruthy()
     expect(html).not.toContain('佳宜')
   })
   it('Ray、+1、薄荷的徽章是頭像，愛皮卡是一個字', () => {

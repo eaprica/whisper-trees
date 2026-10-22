@@ -42,7 +42,8 @@ export const TEAM: readonly TeamMember[] = [
     avatar: '/assets/team/plus1.webp',
     name: '+1',
     title: '軟韌體工程師',
-    // 自我介紹還沒定，先只放名字與職稱
+    role: '實體樹牌方案分析、資料流程更新與確認',
+    skills: 'MCU 系統・穿戴式感測裝置・AI 應用',
   },
   {
     initial: '薄',
