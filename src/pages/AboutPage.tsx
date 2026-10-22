@@ -56,7 +56,7 @@ export default function AboutPage() {
           {TEAM.map((m) => (
             <li key={m.name} className="card team-card" data-testid="team-member">
               <span className="team-badge" aria-hidden="true">
-                {m.initial}
+                {m.avatar ? <img className="team-avatar" src={m.avatar} alt="" width={44} height={44} /> : m.initial}
               </span>
               <div className="team-body">
                 <h3 className="team-name">{m.name}</h3>

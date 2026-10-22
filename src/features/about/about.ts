@@ -4,6 +4,8 @@
 export interface TeamMember {
   /** 圓形徽章上的一個字 */
   initial: string
+  /** 頭像（public/ 底下的路徑），有的話圓形徽章顯示頭像而不是字 */
+  avatar?: string
   name: string
   title: string
   /** 在本案做了什麼（一行）；還沒寫的就不顯示 */
@@ -29,6 +31,7 @@ export const TEAM: readonly TeamMember[] = [
   },
   {
     initial: 'R',
+    avatar: '/assets/team/ray.webp',
     name: 'Ray',
     title: '軟體工程師',
     role: '整理臺北市樹木開放資料，做出這個網頁 Demo',

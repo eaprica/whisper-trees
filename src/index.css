@@ -6522,6 +6522,14 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   font-family: var(--font-voice);
   font-size: 1.3rem;
   font-weight: 700;
+  overflow: hidden;
+}
+
+.team-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .team-body {
