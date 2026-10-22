@@ -139,7 +139,7 @@
 | 光點、商店購買（只賣虛擬造型與相框）、小芽造型、徽章 | 延伸功能示意，存在使用者自己的裝置（store） |
 | 樹上住戶（昆蟲彩蛋：瓢蟲、獨角仙、蟬） | 不是真的昆蟲觀察；打卡成功時由「樹籍編號＋日期＋uid」當種子固定抽出（預設 15%，GM 可調），+3 光點，光點紀錄寫「樹上住戶：獨角仙（模擬）」，畫面與圖鑑標「模擬」；蟬只在 5～9 月；記錄存在 `inventory.insects`（`src/features/game/drops.ts`） |
 | 互動時的心情與森林的回應 | **心情是使用者自己選的真實輸入，不是模擬資料**（存在 `users/{uid}.mood` 與 `users/{uid}.diary`，見「隱私」）；森林的回應是一句示意文字，沒有動畫與音效；資料裡備有「玩家的光與姿態」欄位、畫面不顯示；心情後面沒有建議互動；呼吸、冥想、擁抱是拉近畫面的「摸摸樹」（`src/features/touch/`），做完記進日記、算一個互動（`src/features/mood/mood.ts`、`src/features/journal/diary.ts`） |
-| 稀有配件「古木紋理頭飾」 | 掉落規則是示意的遊戲設計；受保護樹木名冊是真的，但「第一次打卡成功送一件」是模擬的遊戲規則；美術是佔位檔 |
+| 稀有配件「古木紋理頭飾」 | 掉落規則是示意的遊戲設計；受保護樹木名冊是真的，但「第一次打卡成功送一件」是模擬的遊戲規則；美術由 Google Gemini 產生 |
 | GM 後台的全市經濟數字、其他玩家與客訴（`src/mock/players.json`） | 沒有真實營運資料 |
 | 發包商工單進度 | 沒有真實廠商，由後台畫面手動推進 |
 | 承包廠商（綠野造園、蔭涼植栽、城市樹醫）與各自承包的行政區（`src/features/api/vendors.ts`） | 虛構的廠商，用來示範「廠商只看得到自己的工單」 |
@@ -192,6 +192,15 @@
 
 - **程式碼**：[MIT](LICENSE)，© 2026 皮卡愛台灣。
 - **資料**不在 MIT 範圍內，沿用各自原本的授權：政府開放資料依[政府資料開放授權條款第 1 版](https://data.gov.tw/license)；OpenStreetMap 資料依 [ODbL 1.0](https://opendatacommons.org/licenses/odbl/)（© OpenStreetMap contributors）；iNaturalist 樹種照片依各張的 CC0 或 CC BY，版權屬各攝影者（逐張記在 `material/raw/inat/manifest.json`）。詳見上方「資料：哪些是真的、哪些是模擬的」。
+- **美術**不在 MIT 範圍內，**保留所有權利**，版權屬各作者；未經同意不得使用。fork 程式時請換成自己的圖。來源：
+  - 臺灣黑狗（地圖上的你）：愛皮卡手工繪製、切圖（分層原檔在 `material/art/tw-black-dog/`）；走路動畫由 Claude Code 依分層組合（`scripts/build_dog_avatar.py`）。
+  - 石虎、臺灣藍鵲、黑冠麻鷺、穿山甲：+1 用 ChatGPT 產生。
+  - 樹的頁面大圖（日／夜）、拉近畫面的大樹、小芽三個階段、商店的造型與相框、頁首字標：Google Gemini 產生。
+  - Logo（App 圖示、瀏覽器分頁圖示）：愛皮卡設計。
+  - 徽章、集章、樹上住戶、樹苗、澆水壺、空樹穴、樹牌示意、樹種卡、地圖上的樹與花、空狀態等小圖示：由 Claude Code 以 SVG 繪製。
+  - 「關於曦語」的隊員頭像：各隊員提供，版權屬各人。
+  - 樹牌照片（`material/samples/`、掃描頁）：隊員實拍。
+  - 還沒交件的美術是 `scripts/make_placeholders.mjs` 產生的佔位檔，清單見 [docs/ui-assets.md](docs/ui-assets.md)。
 - 使用的開源套件依各自的授權，見下方「使用的開源套件與 AI 工具」。
 
 ## 參考與致謝
@@ -212,7 +221,11 @@
 | tippecanoe | 產生樹木點位向量圖磚 | BSD-2-Clause |
 | OpenFreeMap | 底圖圖磚（免金鑰） | 資料 © OpenMapTiles、OpenStreetMap |
 
-本專案使用 Claude Code 協助整理資料、撰寫規格與程式。
+| AI 工具 | 用途 |
+|---|---|
+| Claude Code | 整理資料、撰寫規格與程式；小圖示 SVG；黑狗走路動畫 |
+| Google Gemini | 樹的大圖、小芽、商店道具與相框、頁首字標（見「授權」的美術來源） |
+| ChatGPT | 石虎、臺灣藍鵲、黑冠麻鷺、穿山甲 |
 
 ## 重新產生資料
 
@@ -249,6 +262,6 @@ node scripts/make_placeholders.mjs   # 依 src/assets.ts 重新產生佔位美�
 
 Firebase 設定與部署步驟見 [docs/firebase-setup.md](docs/firebase-setup.md)。
 
-美術目前都是佔位檔，清單見 [docs/ui-assets.md](docs/ui-assets.md)。佔位檔畫面上**不寫任何標示文字**（公民看到的只是淡色框或一片葉子剪影；五隻動物沒有任何一個 emoji 是對的，所以各用一枚圓形徽章：柔和的底色加一個字，狗、石、鵲、鷺、甲）；地圖行動圈的圖示與微光、時空膠囊、新手禮的小圖示是程式裡的線條圖示（`src/components/icons.tsx`），不是佔位檔；網址帶 `?debug=1` 才改載入 `public/assets/ph-debug/` 的版本（多一行「id 佔位」「尺寸 佔位」，給設計與開發對照），`?debug=0` 關掉，同一個分頁內換頁維持。
+美術清單見 [docs/ui-assets.md](docs/ui-assets.md)（交件的標「已交件」，來源見「授權」）；還沒交件的用佔位檔。佔位檔畫面上**不寫任何標示文字**（公民看到的只是淡色框或一片葉子剪影）；地圖行動圈的圖示與微光、時空膠囊、新手禮的小圖示是程式裡的線條圖示（`src/components/icons.tsx`），不是佔位檔；網址帶 `?debug=1` 才改載入 `public/assets/ph-debug/` 的版本（多一行「id 佔位」「尺寸 佔位」，給設計與開發對照），`?debug=0` 關掉，同一個分頁內換頁維持。
 
 比對規則（公園範圍、樹穴合併）見 [01-data-pipeline](docs/specs/01-data-pipeline.md)。
