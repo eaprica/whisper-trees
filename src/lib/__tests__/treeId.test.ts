@@ -20,8 +20,8 @@ describe('parseTreeId', () => {
 })
 
 describe('real tree tag photo', () => {
-  it('zxing decodes material/samples/tree-tag-SL0560111023.jpg', () => {
-    const img = jpeg.decode(readFileSync('material/samples/tree-tag-SL0560111023.jpg'), { useTArray: true })
+  it('zxing decodes material/samples/tree-tag-BT0650012009.jpg', () => {
+    const img = jpeg.decode(readFileSync('material/samples/tree-tag-BT0650012009.jpg'), { useTArray: true })
     const lum = new Uint8ClampedArray(img.width * img.height)
     for (let i = 0; i < lum.length; i++) {
       const r = img.data[i * 4], g = img.data[i * 4 + 1], b = img.data[i * 4 + 2]
@@ -30,6 +30,6 @@ describe('real tree tag photo', () => {
     const source = new RGBLuminanceSource(lum, img.width, img.height)
     const hints = new Map([[DecodeHintType.TRY_HARDER, true]])
     const text = new QRCodeReader().decode(new BinaryBitmap(new HybridBinarizer(source)), hints).getText()
-    expect(parseTreeId(text)).toBe('SL0560111023')
+    expect(parseTreeId(text)).toBe('BT0650012009')
   })
 })

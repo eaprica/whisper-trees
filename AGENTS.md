@@ -46,7 +46,7 @@
 - `material/raw/`：2026-10-16 下載的政府開放資料與 OSM（來源與授權見 README）。
 - `material/processed/`：`scripts/merge_treepits.py`、`scripts/match_parks_osm.py` 的輸出。
 - `material/raw/inat/`：iNaturalist 樹種照片（2026-10-20，只收 CC0 與 CC BY，逐張記在 `manifest.json`）。不要手動增減照片；要換就改 `scripts/fetch_inat_photos.py` 再重跑。授權規則不可放寬（不收 NC / SA / ND）。
-- `material/samples/tree-tag-SL0560111023.jpg`：真實樹牌照片，掃碼的測試素材。
+- `material/samples/tree-tag-BT0650012009.jpg`：隊員實拍的樹牌照片（北投區自強街的山櫻花，2026-10-20），掃碼的測試素材；掃描頁的 `public/assets/photo/tree-tag.jpg` 是同一張裁切縮小。兩張都去掉了 EXIF。
 - `material/art/tw-black-dog/`：設計交的臺灣黑狗分層 SVG（2026-10-22）。地圖人物的站姿與走路循環由 `scripts/build_dog_avatar.py` 產生，不要手改 `public/assets/ph/avatar-taiwan-dog*.svg`。
 - 樹籍編號 `TreeID` 要整串比對，有 4,219 筆帶 `-001` 這類後綴。
 

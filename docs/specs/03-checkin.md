@@ -12,7 +12,7 @@
 http://trees.gov.taipei/show/?treeid=SL0560111023
 ```
 
-以實拍樹牌解碼確認，照片為 `material/samples/tree-tag-SL0560111023.jpg`。
+以實拍樹牌解碼確認；測試用的照片為 `material/samples/tree-tag-BT0650012009.jpg`（隊員實拍，內容 `http://trees.gov.taipei/show/?treeid=BT0650012009`）。
 
 **一定要在我們的網頁裡掃**。用手機內建相機掃會開到公園處的頁面，不會進到我們的網站。
 
@@ -80,7 +80,7 @@ http://trees.gov.taipei/show/?treeid=SL0560111023
 
 ## 驗收
 
-- [ ] 用 `material/samples/tree-tag-SL0560111023.jpg` 測試，解出 `SL0560111023`（單元測試）。
+- [x] 用 `material/samples/tree-tag-BT0650012009.jpg` 測試，解出 `BT0650012009`（單元測試 `treeId.test.ts`）。
 - [ ] 解析函式能處理：完整網址、`https` 網址、只有編號、帶 `-001` 後綴、亂碼。
 - [ ] iPhone Safari、Android Chrome 實機掃印出來的樹牌成功。
 - [ ] 距離判斷有單元測試，涵蓋四種結果，以及 `checkinRadius` 邊界（半徑內 0.5 m 成功、外 0.5 m 太遠），且地圖感應圈與判斷用同一個半徑。
