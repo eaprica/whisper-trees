@@ -6549,6 +6549,17 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   overflow-wrap: anywhere;
 }
 
+.team-others-title {
+  margin: 16px 0 4px;
+  font-family: var(--font-voice);
+  font-size: 1.05rem;
+}
+
+.team-others {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
 /* 內文裡的連結用深綠（--green 在紙色上只有 4.46:1，不到 4.5:1） */
 .about-link {
   color: var(--green-ink);

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { IconBack } from '../components/icons'
-import { BRAND_SPIRIT, TEAM, TEAM_SUMMARY, TEAM_TAGLINE } from '../features/about/about'
+import { BRAND_SPIRIT, OTHER_CONTRIBUTORS, TEAM, TEAM_SUMMARY, TEAM_TAGLINE } from '../features/about/about'
 
 /** /about：曦語的名字、品牌精神與團隊。唯讀的安靜頁面，返回「我的」 */
 export default function AboutPage() {
@@ -67,6 +67,10 @@ export default function AboutPage() {
             </li>
           ))}
         </ul>
+        <h3 className="team-others-title">其他協力人員</h3>
+        <p className="team-others" data-testid="team-others">
+          {OTHER_CONTRIBUTORS.join('・')}
+        </p>
       </section>
 
       <section className="about-section" aria-labelledby="about-hack">

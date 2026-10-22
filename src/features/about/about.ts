@@ -35,13 +35,6 @@ export const TEAM: readonly TeamMember[] = [
     skills: '軟體工程・雲端系統架構・開發流程',
   },
   {
-    initial: 'M',
-    name: 'Mars／瑪斯',
-    title: '計畫管理師',
-    role: '數據分析，做出讀取公園處圖資的地圖介面',
-    skills: '專案管理・政策研析・網站架構・人才培育',
-  },
-  {
     initial: '佳',
     name: '佳宜',
     title: '韌體工程師',
@@ -55,14 +48,10 @@ export const TEAM: readonly TeamMember[] = [
     role: '評估樹牌打卡方案，畫出遊戲操作流程',
     skills: 'C#・Java・MSSQL；台北市網路公祭網站',
   },
-  {
-    initial: '克',
-    name: '克洛伊伊',
-    title: 'UI/UX 設計師',
-    role: 'Figma 介面設計與 UX 數據',
-    skills: 'UI design・UX research・System & IA・拍攝剪輯',
-  },
 ]
+
+/** 其他協力人員：只列名字，沒有卡片與介紹 */
+export const OTHER_CONTRIBUTORS: readonly string[] = ['Mars／瑪斯', '克洛伊伊']
 
 export const BRAND_SPIRIT = [
   { name: '慢下來', line: '不刷步數，邀請市民停下腳步，與一棵樹好好相處。' },
