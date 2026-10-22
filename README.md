@@ -227,6 +227,7 @@ uv run scripts/build_admin_outline.py   # 產生 public/data/taipei-outline.json
 uv run scripts/fetch_villages.py   # 下載內政部村里界到 material/raw/village/village.zip（只在要更新時跑）
 uv run scripts/build_villages.py   # 產生 public/data/villages/<前綴>.json（里界與每里樹數），順便做 --check
 uv run scripts/build_road_graph.py # 產生 public/data/roads/<前綴>.json（步行路網，需要先有 villages），順便做 --check
+uv run scripts/build_dog_avatar.py  # 臺灣黑狗的站姿與走路循環（material/art/tw-black-dog/ → public/assets/ph/），--check 檢查是否最新
 uv run scripts/fetch_protected_trees.py   # 下載臺北市受保護樹木 CSV 到 material/raw/protected_trees/（只在要更新時跑）
 uv run scripts/build_protected_trees.py   # 對上公園處 TreeID，產生 public/data/protected-trees.json，--check 檢查是否最新
 uv run scripts/fetch_inat_photos.py   # 從 iNaturalist 下載樹種照片到 material/raw/inat/（只收 CC0 / CC BY；每秒 1 次請求，回應有快取；--check 離線檢查授權與張數）

@@ -128,6 +128,8 @@ def build_tiles(df):
             "--no-tile-compression", "--maximum-tile-bytes=500000",
             str(src),
         ], check=True, capture_output=True)
+        # tippecanoe 把完整指令（含本機與暫存目錄的絕對路徑）寫進 metadata.json；換成相對路徑，不把本機路徑放進版控
+        stamp.write_text(stamp.read_text(encoding="utf-8").replace(str(target), "public/data/tree-tiles").replace(str(src), "trees.geojsonl"), encoding="utf-8")
     tiles = list(target.rglob("*.pbf"))
     size = sum(t.stat().st_size for t in tiles)
     print(f"tiles: {len(tiles)} files, {size / 1e6:.1f} MB")
