@@ -24,7 +24,7 @@ export const TEAM: readonly TeamMember[] = [
     initial: '愛',
     name: '愛皮卡',
     title: '概念發起人',
-    role: '發想曦語的遊戲概念、世界觀與蠟筆繪本畫風',
+    role: '發想曦語的遊戲概念與世界觀，第一人稱玩家角色設計，UIUX介面設計',
     skills: 'App・Web・SaaS・SCADA・品牌・插畫・繪本・動畫',
   },
   {
