@@ -11,6 +11,7 @@ import { InfoCard, ReportCard, WhisperCard } from './FocusCards'
 import { CheckinReward } from './CheckinReward'
 import type { FocusAfterScan, FocusCardAfterScan } from '../../pages/ScanPage'
 import { GlowLine } from '../tree/GlowLine'
+import { speciesArtIsWide, speciesArtUrl } from './speciesArt'
 
 const ICON: Record<FocusActionId, ReactNode> = {
   touch: <IconActionTouch />,
@@ -99,6 +100,9 @@ export function TreeFocusView({ tree, range, checkedIn, animal, demo, onClose, i
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [onClose, card, reward])
 
+  // 有畫好插畫的樹種換成該樹種的插畫，其他沿用通用的大樹（見 speciesArt.ts）
+  const speciesArt = speciesArtUrl(tree.species)
+
   // 掛在手機框（.phone-shell）上：地圖頁自己的層疊順序蓋不過底部導覽；桌機 Demo 時也維持手機寬度
   return createPortal(
     <div ref={root} className="tree-focus" role="dialog" aria-modal="true" aria-labelledby="tree-focus-name" data-testid="tree-focus" data-tree-id={tree.id}>
@@ -111,7 +115,11 @@ export function TreeFocusView({ tree, range, checkedIn, animal, demo, onClose, i
       </div>
 
       <div className="tree-focus-stage">
-        <Art id="tree-focus" alt="" className="tree-focus-art" />
+        {speciesArt ? (
+          <img className={`art tree-focus-art species${speciesArtIsWide(tree.species) ? ' wide' : ''}`} src={speciesArt} alt="" data-testid="tree-focus-species-art" />
+        ) : (
+          <Art id="tree-focus" alt="" className="tree-focus-art" />
+        )}
         {/* 你的動物站在樹下 */}
         <Art
           id={walkingIn && animal.walkArt ? animal.walkArt : animal.art}

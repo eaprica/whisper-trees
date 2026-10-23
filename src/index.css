@@ -3530,6 +3530,19 @@ html:has(.tab-shell) {
   object-fit: contain;
 }
 
+/* 樹種插畫（public/assets/trees/）：樹根貼著舞台底部，和通用大樹一樣站在地上 */
+.tree-focus-art.species {
+  object-position: center bottom;
+}
+
+/* 橫寬的榕樹：放大到比舞台寬（兩側的氣根可以出框），樹冠才接得住上方的按鈕 */
+.tree-focus-art.species.wide {
+  inset: auto auto 0 50%;
+  width: 136%;
+  height: auto;
+  transform: translateX(-50%);
+}
+
 .focus-ring {
   position: absolute;
   display: grid;

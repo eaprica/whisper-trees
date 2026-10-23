@@ -39,7 +39,7 @@
 ### 點樹的拉近畫面
 
 - **鏡頭**：點樹用 `easeTo` 飛到樹旁：約 20.5 級、俯角 60°、樹在畫面中心偏上（`TREE_FOCUS`：`zoom`、`pitch`、`offsetY` 0.12、`durationMs` 1100），方位角不變。設了「減少動態」就不用動畫（時間 0）。飛之前的視角記下來，關閉時飛回去。
-- **畫面**（`src/features/map/TreeFocusView.tsx`，掛在 `.phone-shell`（桌機 Demo 時維持手機寬度；沒有就掛 `document.body`），`role="dialog"`，`data-testid="tree-focus"`）：點地圖上的樹（點到圓點底座或站起來的小樹都算），蓋住地圖、**不蓋底部導覽**（畫面底邊在導覽上面，導覽疊在最上層，中間凸出的掃樹牌鈕不被切掉）：淡綠底，頂端是「樹種・路名」與光點餘額；中間一棵大樹（佔位 `tree-focus`），樹冠上四個圓；**你的動物（`avatar-<id>`）站在樹下**、樹幹右邊（有走路美術的動物，打開拉近畫面、或按「走過去」走進感應圈時，用走路循環從左邊走進來，1.4 秒後站好，`.tree-focus-animal.walking-in`；掃樹牌回來跳獎勵卡、減少動態時直接站好）；底部是「返回」（`focus-back`）與「樹的資料」（`focus-info`）。按導覽換到別的分頁就離開拉近畫面。
+- **畫面**（`src/features/map/TreeFocusView.tsx`，掛在 `.phone-shell`（桌機 Demo 時維持手機寬度；沒有就掛 `document.body`），`role="dialog"`，`data-testid="tree-focus"`）：點地圖上的樹（點到圓點底座或站起來的小樹都算），蓋住地圖、**不蓋底部導覽**（畫面底邊在導覽上面，導覽疊在最上層，中間凸出的掃樹牌鈕不被切掉）：淡綠底，頂端是「樹種・路名」與光點餘額；中間一棵大樹：有樹種插畫的樹種（榕樹、茄苳、楓香、無患子、大葉山欖、桂花、麵包樹、銀樺，以及櫻花類共用一張）顯示該樹種的插畫（`public/assets/trees/<學名>.webp`，對照表在 `speciesArt.ts`，有單元測試；底部對齊，橫寬的榕樹放大到 136% 讓樹冠接住上方的圓），其他樹種用通用的 `tree-focus`；樹冠上四個圓；**你的動物（`avatar-<id>`）站在樹下**、樹幹右邊（有走路美術的動物，打開拉近畫面、或按「走過去」走進感應圈時，用走路循環從左邊走進來，1.4 秒後站好，`.tree-focus-animal.walking-in`；掃樹牌回來跳獎勵卡、減少動態時直接站好）；底部是「返回」（`focus-back`）與「樹的資料」（`focus-info`）。按導覽換到別的分頁就離開拉近畫面。
 - **圈**（`focusActions`，`treeRings.ts`，有單元測試）。名稱是「摸摸樹／留言在樹洞」。打過卡之後點了**在畫面裡打開一張卡**（`tree-focus-sheet`，從底部升起蓋在樹上，`focus-card-<id>`；卡片右上「收起」`focus-card-close` 回到圈），不換頁：
 
   | 圈 | 大小 | `data-testid` | 打開的卡 |
