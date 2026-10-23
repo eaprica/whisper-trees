@@ -4,6 +4,8 @@
 
 **網址：[https://whisper-trees-demo.southern-light.dev](https://whisper-trees-demo.southern-light.dev)**（市民端只能用手機開；桌機請加 `?demo=1` 進 Demo 模式：模擬定位（可以拖曳地圖上的人物、或點樹按「走過去」移動，離樹太遠一樣會被判「太遠」）、可掃示範樹牌。政府端 `/gov` 用桌機開）
 
+📄 **[提案簡報（PDF，32 頁）](docs/submission/WhisperTrees_proposal.pdf)**：問題與數據、遊戲設計、政府端與預期影響
+
 台北每年移除約 3,164 棵樹。曦語把 16 萬棵行道樹與公園樹變成市民可以停下來、對它說話的「樹洞」；同時讓市民在空樹穴許願、澆水，政府依市民需求與樹蔭缺口排出補種順序，並公開進度。
 
 - 掃公園處樹牌上**現有的 QR Code**，加上 **GPS** 確認人在樹旁，就能打卡。不需要新增任何設施。
@@ -193,13 +195,15 @@
 - **程式碼**：[MIT](LICENSE)，© 2026 皮卡愛台灣。MIT 只涵蓋程式碼，美術與資料見下面兩項與 [NOTICE](NOTICE)。
 - **資料**不在 MIT 範圍內，沿用各自原本的授權：政府開放資料依[政府資料開放授權條款第 1 版](https://data.gov.tw/license)；OpenStreetMap 資料依 [ODbL 1.0](https://opendatacommons.org/licenses/odbl/)（© OpenStreetMap contributors）；iNaturalist 樹種照片依各張的 CC0 或 CC BY，版權屬各攝影者（逐張記在 `material/raw/inat/manifest.json`）。詳見上方「資料：哪些是真的、哪些是模擬的」。
 - **美術**不在 MIT 範圍內，**保留所有權利**，版權屬各作者；未經同意不得使用。fork 程式時請換成自己的圖。來源：
-  - 臺灣黑狗（地圖上的你）：愛皮卡手工繪製、切圖（分層原檔在 `material/art/tw-black-dog/`）；走路動畫由 Claude Code 依分層組合（`scripts/build_dog_avatar.py`）。
-  - 石虎、臺灣藍鵲、黑冠麻鷺、穿山甲：+1 用 ChatGPT 產生。
-  - 樹的頁面大圖（日／夜）、拉近畫面的大樹、小芽三個階段、商店的造型與相框、頁首字標：Google Gemini 產生。
-  - Logo（App 圖示、瀏覽器分頁圖示）：愛皮卡設計。
+    - 臺灣黑狗（地圖上的你）：+1 用 ChatGPT 產生原型，Claude 描成 SVG，愛皮卡修圖並手動拆分身體與四肢部件（分層原檔在 `material/art/tw-black-dog/`），再由 Ray 以 Claude Code 依分層組合成走路動畫（`scripts/build_dog_avatar.py`）。目前只有黑狗有走路動畫。
+  - 石虎：愛皮卡參考 +1 用 ChatGPT 產生的原型，重新設計角色特徵並重繪，拆分身體與四肢部件（分層原檔在 `material/art/tw-leopard-cat/`）。
+  - 臺灣藍鵲、黑冠麻鷺、穿山甲：+1 用 ChatGPT 產生角色原型。
+  - 以上角色目前暫用，正式版將由愛皮卡重繪成蠟筆手繪的繪本風格。  - 樹的頁面大圖（日／夜）、拉近畫面的大樹、小芽三個階段、商店的造型與相框：Google Gemini 產生。
+  - Logo（App 圖示、瀏覽器分頁圖示）：愛皮卡設計。頁首字標：愛皮卡提出日月合體構想，Claude 以 SVG 繪製。
   - 徽章、集章、樹上住戶、樹苗、澆水壺、空樹穴、樹牌示意、樹種卡、地圖上的樹與花、空狀態等小圖示：由 Claude Code 以 SVG 繪製。
   - 「關於曦語」的隊員頭像：各隊員提供，版權屬各人。
   - 樹牌照片（`material/samples/`、掃描頁）：隊員實拍。
+  - 提案簡報（`docs/submission/WhisperTrees_proposal.pdf`）與投稿封面（`docs/submission/cover-4x3.png`）：曦語團隊製作。
   - 還沒交件的美術是 `scripts/make_placeholders.mjs` 產生的佔位檔，清單見 [docs/ui-assets.md](docs/ui-assets.md)。
 - 使用的開源套件依各自的授權，見下方「使用的開源套件與 AI 工具」。
 
@@ -223,9 +227,9 @@
 
 | AI 工具 | 用途 |
 |---|---|
-| Claude Code | 整理資料、撰寫規格與程式；小圖示 SVG；黑狗走路動畫 |
-| Google Gemini | 樹的大圖、小芽、商店道具與相框、頁首字標（見「授權」的美術來源） |
-| ChatGPT | 石虎、臺灣藍鵲、黑冠麻鷺、穿山甲 |
+| Claude Code | 整理資料、撰寫規格與程式；小圖示 SVG；黑狗 SVG 描圖與走路動畫組合；頁首字標 SVG |
+| Google Gemini | 樹的大圖、小芽、商店道具與相框（見「授權」的美術來源） |
+| ChatGPT | 臺灣黑狗、石虎、臺灣藍鵲、黑冠麻鷺、穿山甲的角色原型 |
 
 ## 重新產生資料
 
