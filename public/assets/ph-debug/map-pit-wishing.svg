@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="72" viewBox="15 11 90 101" role="img">
+<defs>
+<radialGradient id="halo"><stop offset="0" stop-color="#FFE680" stop-opacity="0.75"/><stop offset="0.45" stop-color="#FFD54F" stop-opacity="0.3"/><stop offset="1" stop-color="#FFD54F" stop-opacity="0"/></radialGradient>
+<radialGradient id="pool"><stop offset="0" stop-color="#FFE680" stop-opacity="0.8"/><stop offset="1" stop-color="#FFE680" stop-opacity="0"/></radialGradient>
+<linearGradient id="beam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE680" stop-opacity="0.5"/><stop offset="1" stop-color="#FFE680" stop-opacity="0.05"/></linearGradient>
+<radialGradient id="starfill" cx="0.4" cy="0.35" r="0.7"><stop offset="0" stop-color="#FFFBE0"/><stop offset="0.5" stop-color="#FFD84D"/><stop offset="1" stop-color="#F5B400"/></radialGradient>
+</defs><ellipse cx="64" cy="100" rx="32" ry="11" fill="#1B3A2A" opacity="0.14"/>
+<ellipse cx="60" cy="99.2" rx="30.0" ry="13.0" fill="#4E8F33"/>
+<ellipse cx="60" cy="98.0" rx="29.4" ry="12.2" fill="#7DB84A"/>
+<path d="M86.7,98.5 l1.1,-3.9 l0.8,3.9 Z" fill="#B5D96A"/>
+<path d="M86.0,100.5 l1.1,-2.4 l0.8,2.4 Z" fill="#B5D96A"/>
+<path d="M84.3,102.5 l0.4,-3.7 l0.8,3.7 Z" fill="#B5D96A"/>
+<path d="M82.1,104.1 l1.2,-3.2 l0.8,3.2 Z" fill="#B5D96A"/>
+<path d="M78.3,105.9 l1.3,-4.2 l0.8,4.2 Z" fill="#B5D96A"/>
+<path d="M74.3,107.2 l0.9,-3.4 l0.8,3.4 Z" fill="#B5D96A"/>
+<path d="M69.4,108.2 l0.5,-2.1 l0.8,2.1 Z" fill="#B5D96A"/>
+<path d="M66.1,108.6 l0.6,-3.7 l0.8,3.7 Z" fill="#B5D96A"/>
+<path d="M60.1,109.0 l0.9,-3.1 l0.8,3.1 Z" fill="#B5D96A"/>
+<path d="M55.3,108.9 l1.0,-2.2 l0.8,2.2 Z" fill="#B5D96A"/>
+<path d="M50.6,108.4 l1.1,-4.2 l0.8,4.2 Z" fill="#B5D96A"/>
+<path d="M45.2,107.5 l0.8,-3.7 l0.8,3.7 Z" fill="#4E8F33"/>
+<path d="M42.6,106.8 l0.7,-3.7 l0.8,3.7 Z" fill="#B5D96A"/>
+<path d="M37.4,104.7 l0.3,-2.1 l0.8,2.1 Z" fill="#4E8F33"/>
+<path d="M34.9,103.1 l1.2,-2.5 l0.8,2.5 Z" fill="#B5D96A"/>
+<path d="M33.1,101.5 l0.4,-2.9 l0.8,2.9 Z" fill="#B5D96A"/>
+<path d="M31.9,99.3 l0.4,-2.6 l0.8,2.6 Z" fill="#B5D96A"/>
+<path d="M31.7,97.6 l0.4,-3.7 l0.8,3.7 Z" fill="#4E8F33"/>
+<path d="M32.3,95.7 l0.8,-2.0 l0.8,2.0 Z" fill="#B5D96A"/>
+<path d="M34.1,93.5 l0.7,-3.2 l0.8,3.2 Z" fill="#B5D96A"/>
+<path d="M36.1,92.0 l0.7,-3.7 l0.8,3.7 Z" fill="#B5D96A"/>
+<path d="M39.6,90.3 l0.5,-2.9 l0.8,2.9 Z" fill="#4E8F33"/>
+<path d="M43.2,89.0 l1.2,-2.7 l0.8,2.7 Z" fill="#B5D96A"/>
+<path d="M47.5,88.1 l0.9,-4.2 l0.8,4.2 Z" fill="#4E8F33"/>
+<path d="M53.2,87.3 l0.5,-4.2 l0.8,4.2 Z" fill="#B5D96A"/>
+<path d="M57.4,87.0 l0.6,-2.7 l0.8,2.7 Z" fill="#B5D96A"/>
+<path d="M61.9,87.1 l0.9,-2.5 l0.8,2.5 Z" fill="#B5D96A"/>
+<path d="M66.8,87.4 l0.8,-2.8 l0.8,2.8 Z" fill="#4E8F33"/>
+<path d="M73.8,88.7 l0.4,-3.8 l0.8,3.8 Z" fill="#4E8F33"/>
+<path d="M76.6,89.5 l1.2,-2.3 l0.8,2.3 Z" fill="#B5D96A"/>
+<path d="M81.0,91.3 l0.5,-3.6 l0.8,3.6 Z" fill="#B5D96A"/>
+<path d="M83.4,92.8 l1.3,-2.4 l0.8,2.4 Z" fill="#B5D96A"/>
+<path d="M85.6,94.9 l0.3,-2.2 l0.8,2.2 Z" fill="#B5D96A"/>
+<path d="M86.3,96.1 l0.5,-4.1 l0.8,4.1 Z" fill="#B5D96A"/>
+<ellipse cx="60" cy="97.7" rx="16.8" ry="7.2" fill="#4E8F33"/>
+<ellipse cx="60" cy="98.0" rx="16.0" ry="6.5" fill="#7A5233"/>
+<ellipse cx="60" cy="96.4" rx="14.4" ry="3.9" fill="#5A3A22" opacity="0.55"/>
+<circle cx="58.3" cy="95.8" r="1.0" fill="#5A3A22" opacity="0.7"/>
+<circle cx="54.7" cy="96.6" r="0.7" fill="#5A3A22" opacity="0.7"/>
+<circle cx="59.4" cy="96.8" r="0.7" fill="#5A3A22" opacity="0.7"/>
+<circle cx="49.7" cy="96.5" r="0.9" fill="#5A3A22" opacity="0.7"/>
+<circle cx="57.8" cy="102.3" r="0.7" fill="#5A3A22" opacity="0.7"/>
+<circle cx="66.2" cy="98.2" r="0.8" fill="#5A3A22" opacity="0.7"/>
+<circle cx="64.7" cy="98.7" r="0.8" fill="#5A3A22" opacity="0.7"/>
+<circle cx="56.1" cy="97.3" r="0.8" fill="#5A3A22" opacity="0.7"/>
+<circle cx="69.2" cy="95.1" r="0.9" fill="#5A3A22" opacity="0.7"/>
+<ellipse cx="60" cy="98" rx="15" ry="5.5" fill="url(#pool)"/>
+<circle cx="60" cy="64" r="30" fill="url(#halo)"/>
+<path d="M56,70 L64,70 L73,98 L47,98 Z" fill="url(#beam)"/>
+<path d="M60.00,49.00 L64.11,58.34 L74.27,59.36 L66.66,66.16 L68.82,76.14 L60.00,71.00 L51.18,76.14 L53.34,66.16 L45.73,59.36 L55.89,58.34 Z" fill="#FFF3B0" opacity="0.65" transform="translate(0,0)"/>
+<path d="M60.00,51.50 L63.29,59.47 L71.89,60.14 L65.33,65.73 L67.35,74.11 L60.00,69.60 L52.65,74.11 L54.67,65.73 L48.11,60.14 L56.71,59.47 Z" fill="url(#starfill)" stroke="#F2A900" stroke-width="0.8" stroke-linejoin="round"/>
+<path d="M58.80,58.00 L59.98,60.88 L63.08,61.11 L60.70,63.12 L61.45,66.14 L58.80,64.50 L56.15,66.14 L56.90,63.12 L54.52,61.11 L57.62,60.88 Z" fill="#FFFDF0" opacity="0.9"/>
+<path d="M38.0,44.8 Q38.0,48.0 41.2,48.0 Q38.0,48.0 38.0,51.2 Q38.0,48.0 34.8,48.0 Q38.0,48.0 38.0,44.8 Z" fill="#FFE27A"/>
+<path d="M83.0,53.4 Q83.0,56.0 85.6,56.0 Q83.0,56.0 83.0,58.6 Q83.0,56.0 80.4,56.0 Q83.0,56.0 83.0,53.4 Z" fill="#FFE27A"/>
+<path d="M44.0,78.0 Q44.0,80.0 46.0,80.0 Q44.0,80.0 44.0,82.0 Q44.0,80.0 42.0,80.0 Q44.0,80.0 44.0,78.0 Z" fill="#FFE27A"/>
+<path d="M79.0,73.6 Q79.0,76.0 81.4,76.0 Q79.0,76.0 79.0,78.4 Q79.0,76.0 76.6,76.0 Q79.0,76.0 79.0,73.6 Z" fill="#FFE27A"/>
+<path d="M60.0,37.2 Q60.0,39.0 61.8,39.0 Q60.0,39.0 60.0,40.8 Q60.0,39.0 58.2,39.0 Q60.0,39.0 60.0,37.2 Z" fill="#FFE27A"/>
+</svg>
