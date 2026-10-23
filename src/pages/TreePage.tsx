@@ -1,18 +1,18 @@
 import { useEffect, useId, useMemo, useRef, useState } from 'react'
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
 import { findTree, type Tree } from '../lib/trees'
-import { seededInt, weekKey } from '../lib/seed'
 import type { CheckinResult } from '../lib/geo'
-import { isDemoMode, recentCheckin, setDemoPosition, useStore, visitedThisWeek, whispersOf } from '../store'
+import { isDemoMode, recentCheckin, setDemoPosition, useStore, whispersOf } from '../store'
 import { walkTarget } from '../lib/geo'
 import { useAnchor } from '../features/map/useAnchor'
 import { rangeInfo } from '../features/map/treeRings'
-import { Art, MockTag, formatDate, relativeDays } from '../components/ui'
-import { IconBack, IconCapsule, IconGlow } from '../components/icons'
+import { Art, formatDate, relativeDays } from '../components/ui'
+import { IconBack, IconCapsule } from '../components/icons'
 import type { CheckinState } from './ScanPage'
 import { ReportBox } from '../features/report/ReportBox'
 import { WhisperBox } from '../features/whisper/WhisperBox'
 import { TreeFacts } from '../features/tree/TreeFacts'
+import { GlowLine } from '../features/tree/GlowLine'
 import { isDaytime } from '../features/game/ledger'
 import { useIsProtectedTree } from '../features/game/protectedTrees'
 import { checkinPointsLine } from '../features/game/checkinLine'
@@ -106,7 +106,6 @@ export default function TreePage() {
   const checkinMood =
     onSite && recent && !celebrating ? <InteractionMood kind="checkin" treeId={treeId} at={recent.at} open={false} /> : null
   const lastWhisperAt = thisVisit.length ? thisVisit[thisVisit.length - 1].at : null
-  const glow = seededInt(`${treeId}:${weekKey()}`, 0, 30) + (visitedThisWeek(treeId) ? 1 : 0)
 
   if (tree === undefined) return <div className="page center muted">正在找這棵樹…</div>
   if (tree === null)
@@ -166,7 +165,7 @@ export default function TreePage() {
 
       {noticeFor(treeId) && <NoticeCard notice={noticeFor(treeId)!} />}
 
-      <GlowLine glow={glow} />
+      <GlowLine treeId={treeId} />
 
       {capsule && !capsule.mock && (
         <section className="capsule" aria-label="時空膠囊">
@@ -249,33 +248,6 @@ function ProtectedSeal({ open, onToggle, noteId }: { open: boolean; onToggle: ()
       <span className="seal">受保護樹木</span>
       <span className="visually-hidden">{open ? '，收起說明' : '，看說明'}</span>
     </button>
-  )
-}
-
-/** 本週微光人數；「?」是 44 px 的按鈕，和句子同一行（句子太長可以折行），說明展開在下面整列 */
-function GlowLine({ glow }: { glow: number }) {
-  const [open, setOpen] = useState(false)
-  const helpId = useId()
-  return (
-    <div className="glow-line">
-      <span className="ornament sm glow" aria-hidden>
-        <IconGlow />
-      </span>
-      <span className="glow-sentence">
-        這棵樹本週有 <strong>{glow}</strong> 道微光陪伴
-      </span>
-      <MockTag />
-      <button type="button" className="help-btn" aria-label="微光是什麼？" aria-expanded={open} aria-controls={helpId} onClick={() => setOpen(!open)}>
-        <span className="help-dot" aria-hidden>
-          ?
-        </span>
-      </button>
-      {open && (
-        <p id={helpId} className="glow-help muted small">
-          每個在這棵樹旁打卡的人，就是一道微光。只顯示人數，不會顯示任何人說了什麼。
-        </p>
-      )}
-    </div>
   )
 }
 

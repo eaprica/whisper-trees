@@ -1,7 +1,7 @@
-import { useEffect, useId, useRef, useState, type ReactNode } from 'react'
+import { useEffect, useRef, useState, type ReactNode } from 'react'
 import { createPortal } from 'react-dom'
 import type { Tree } from '../../lib/trees'
-import { Art,MockTag } from '../../components/ui'
+import { Art } from '../../components/ui'
 import { IconActionAdopt, IconActionInfo, IconActionReport, IconActionRoute, IconActionTouch, IconActionWalk, IconActionWhisper, IconBack } from '../../components/icons'
 import { BalanceChip } from '../nav/BalanceChip'
 import type { Animal } from '../avatar/animals'
@@ -10,9 +10,7 @@ import { focusActions, focusButtons, type FocusActionId, type RangeInfo } from '
 import { InfoCard, ReportCard, WhisperCard } from './FocusCards'
 import { CheckinReward } from './CheckinReward'
 import type { FocusAfterScan, FocusCardAfterScan } from '../../pages/ScanPage'
-import { IconGlow } from '../../components/icons'
-import { visitedThisWeek } from '../../store'
-import { seededInt, weekKey } from '../../lib/seed'
+import { GlowLine } from '../tree/GlowLine'
 
 const ICON: Record<FocusActionId, ReactNode> = {
   touch: <IconActionTouch />,
@@ -41,33 +39,6 @@ interface Props {
   onScan: (openCard?: FocusCardAfterScan) => void
   onRoute: () => void
   onWalk: () => void
-}
-
-/** 本週微光人數；「?」是 44 px 的按鈕，和句子同一行（句子太長可以折行），說明展開在下面整列 */
-function GlowLine({ glow }: { glow: number }) {
-  const [open, setOpen] = useState(false)
-  const helpId = useId()
-  return (
-    <div className="glow-line">
-      <span className="ornament sm glow" aria-hidden>
-        <IconGlow />
-      </span>
-      <span className="glow-sentence">
-        這棵樹本週有 <strong>{glow}</strong> 道微光陪伴
-      </span>
-      <MockTag />
-      <button type="button" className="help-btn" aria-label="微光是什麼？" aria-expanded={open} aria-controls={helpId} onClick={() => setOpen(!open)}>
-        <span className="help-dot" aria-hidden>
-          ?
-        </span>
-      </button>
-      {open && (
-        <p id={helpId} className="glow-help muted small">
-          每個在這棵樹旁打卡的人，就是一道微光。只顯示人數，不會顯示任何人說了什麼。
-        </p>
-      )}
-    </div>
-  )
 }
 
 /**
@@ -127,8 +98,6 @@ export function TreeFocusView({ tree, range, checkedIn, animal, demo, onClose, i
     return () => window.removeEventListener('keydown', onKey)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [onClose, card, reward])
-
-  const glow = seededInt(`${tree.id}:${weekKey()}`, 0, 30) + (visitedThisWeek(tree.id) ? 1 : 0)
 
   // 掛在手機框（.phone-shell）上：地圖頁自己的層疊順序蓋不過底部導覽；桌機 Demo 時也維持手機寬度
   return createPortal(
@@ -192,7 +161,7 @@ export function TreeFocusView({ tree, range, checkedIn, animal, demo, onClose, i
           {card === 'info' && <InfoCard tree={tree} />}
         </div>
       )}
-      <GlowLine glow={glow} />
+      <GlowLine treeId={tree.id} />
       <div className="tree-focus-bar">
         <button type="button" className="btn focus-back" data-testid="focus-back" onClick={onClose}>
           <IconBack /> 返回

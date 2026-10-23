@@ -61,7 +61,7 @@ export function ReportCard({ tree, onClose }: { tree: Tree; onClose: () => void 
   )
 }
 
-/** 樹的資料：開放資料的欄位，最下面可以打開完整的樹的頁面（照片、微光、樹洞都在那裡） */
+/** 樹的資料：這個樹種的照片（每棵樹固定一張，和樹的頁面同一張；沒有照片用插畫）與開放資料的欄位 */
 export function InfoCard({ tree }: { tree: Tree }) {
   const photos = useSpeciesPhotos(tree.species)
   const night = !isDaytime()
