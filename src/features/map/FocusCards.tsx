@@ -1,13 +1,16 @@
 import { useMemo } from 'react'
-import { Link } from 'react-router-dom'
 import type { Tree } from '../../lib/trees'
 import { recentCheckin, useStore, whispersOf } from '../../store'
-import { formatDate, relativeDays } from '../../components/ui'
+import { Art, formatDate, relativeDays } from '../../components/ui'
 import { IconCapsule } from '../../components/icons'
 import { InteractionMood } from '../journal/InteractionMood'
 import { ReportBox } from '../report/ReportBox'
 import { TreeFacts } from '../tree/TreeFacts'
 import { WhisperBox } from '../whisper/WhisperBox'
+import { useSpeciesPhotos } from '../../lib/speciesPhotos'
+import { photoIndexForTree } from '../species/carousel'
+import { PhotoCarousel } from '../species/PhotoCarousel'
+import { isDaytime } from '../game/ledger'
 
 // 拉近畫面裡的卡片（點了就開卡，不換頁）：留言在樹洞、回報、樹的資料。
 // 摸摸樹的卡是 ../touch/TouchPanel。摸摸樹、留言在感應圈內就打得開（不用掃樹牌）；回報的卡只有打過卡才打得開（拉近畫面擋著）。
@@ -60,13 +63,22 @@ export function ReportCard({ tree, onClose }: { tree: Tree; onClose: () => void 
 
 /** 樹的資料：開放資料的欄位，最下面可以打開完整的樹的頁面（照片、微光、樹洞都在那裡） */
 export function InfoCard({ tree }: { tree: Tree }) {
+  const photos = useSpeciesPhotos(tree.species)
+  const night = !isDaytime()
+
   return (
     <div className="focus-card-body" data-testid="focus-card-info">
       <h2 className="focus-card-title">樹的資料</h2>
+      {photos.length ? (
+        <PhotoCarousel
+          species={tree.species}
+          photos={[photos[photoIndexForTree(tree.id, photos.length)]]}
+          note="這個樹種的照片，不是這一棵樹。"
+        />
+      ) : (
+        <Art id={night ? 'tree-hero-night' : 'tree-hero'} alt={`${tree.species}的插畫`} className="hero" />
+      )}
       <TreeFacts tree={tree} />
-      <Link className="btn block" to={`/tree/${tree.id}`} data-testid="focus-open-page">
-        打開這棵樹的頁面
-      </Link>
     </div>
   )
 }
