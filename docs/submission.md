@@ -12,7 +12,7 @@
 | 作品名稱 | 曦語 Whisper Trees |
 | 作品網址 | https://whisper-trees-demo.southern-light.dev |
 | 介紹影片（1:36，繁中字幕） | https://youtu.be/RUsP6LVpYW0 |
-| 程式碼網址（可不填） | https://github.com/redtear1115/whisper-trees-demo （repo 改成公開後才能填） |
+| 程式碼網址（可不填） | https://github.com/redtear1115/whisper-trees-demo |
 
 主辦對作品的要求與我們的對應：
 
@@ -88,10 +88,12 @@ repo 公開之後，可以把 GitHub 網址放在作品介紹的最後一行。
 
 ## 交件前檢查
 
-- [ ] 正式網址部署的是最新版（`main` 已 push、`npm run deploy` 已跑）
+2026-10-23 已送出。
+
+- [x] 正式網址部署的是最新版（`main` 已 push、`npm run deploy` 已跑）
 - [ ] 手機實機走過一次：掃樹牌打卡 → 摸摸樹 → 回報 → 樹洞；空樹穴許願 → 澆水
 - [ ] 桌機 `?demo=1` 走過一次；政府端 `/gov` 改一筆案件進度，市民端看得到
-- [ ] repo 改成公開（GitHub 設定網站網址與說明）
-- [ ] 隊員同意「關於曦語」頁面列出名字
-- [ ] 封面圖截好
+- [x] repo 改成公開（GitHub 設定網站網址與說明）
+- [x] 隊員同意「關於曦語」頁面列出名字
+- [x] 封面圖：用愛皮卡另外交的一份
 - [x] 介紹影片上傳 YouTube（2026-10-23 重新上傳修正 1:16 閃爍的版本；舊的 `a8H0nAIgJ3M` 已設私人，已分享出去的舊連結要換）
