@@ -5,7 +5,8 @@ LICENSE（MIT）只涵蓋本 repo 的程式碼。以下內容不在 MIT 範圍�
 
 1. 美術：保留所有權利，版權屬各作者，未經同意不得使用。
    包括 public/assets/ 底下交件的美術（動物、樹的大圖、小芽、商店道具與相框、小圖示、
-   App 圖示與分頁圖示、隊員頭像、樹牌照片）與 material/art/、material/samples/。
+   App 圖示與分頁圖示、頁首字標、隊員頭像、樹牌照片），docs/submission/ 的提案簡報與投稿封面，
+   以及 material/art/、material/samples/。
    各項的作者與來源見 README「授權」。fork 時請換成自己的圖。
 
 2. 資料：沿用各自原本的授權。
