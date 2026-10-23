@@ -3329,9 +3329,10 @@ html:has(.tab-shell) {
   cursor: grabbing;
 }
 
-/* 往左走時水平翻轉（美術面向右）；走路與站著同一個畫框，換圖時不會跳 */
+/* 往左走時水平翻轉（美術面向右）；走路與站著同一個畫框，換圖時不會跳。
+   用 scale 不用 transform：輕晃動畫 avatar-bob 會蓋掉 img 的 transform，翻轉就不見了 */
 .me-avatar[data-facing='left'] img {
-  transform: scaleX(-1);
+  scale: -1 1;
 }
 
 .me-avatar img {
