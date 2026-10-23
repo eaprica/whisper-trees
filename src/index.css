@@ -2,7 +2,7 @@
   --paper: #f7f3ea;
   --card: #fffdf8;
   --ink: #2c3a2e;
-  /* 次要文字：在 --paper 與 --card 上都 ≥ 4.5:1 */
+  /* 甈∟����嚗𡁜銁 --paper �� --card 銝𢠃� �� 4.5:1 */
   --muted: #586558;
   --line: #e3dccb;
   --green: #3f7d4e;
@@ -14,11 +14,11 @@
   --glow: #f2c14e;
   --red: #b4483c;
   --red-ink: #93352b;
-  /* 手寫感的標題與情感句；內文維持系統字 */
+  /* �见神�毺�璅䠷�����笔蘂嚗𥕦���雁��頂蝯勗� */
   --font-voice: 'LXGW WenKai TC', 'Noto Sans TC', 'PingFang TC', serif;
   --radius: 14px;
   --shadow: 0 6px 24px rgba(44, 58, 46, 0.12);
-  /* 底部導覽高度（含安全區）；地圖上的浮動元件都排在它上面 */
+  /* 摨閖�撠舘汗擃睃漲嚗�鉄摰匧���嚗㚁��啣�銝羓�瘚桀���辣�賣��典�銝𢠃𢒰 */
   --nav-h: calc(56px + env(safe-area-inset-bottom, 0px));
   --map-base: calc(var(--nav-h) + 12px);
   font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', system-ui, sans-serif;
@@ -50,7 +50,7 @@ body {
   color: var(--ink);
 }
 
-/* 兩層焦點框：深綠外框（對紙色 7:1）＋微光色光暈 */
+/* �拙惜�阡�獢��瘛梁�憭𡝗�嚗��蝝躰𠧧 7:1嚗㚁�敺桀��脣��� */
 :focus-visible {
   outline: 3px solid var(--green-ink);
   outline-offset: 2px;
@@ -86,7 +86,7 @@ p {
   margin: 0.3em 0;
 }
 
-/* 連結預設用深綠：--green 在紙色上只有 4.46:1、在淡綠底上 4.07:1，小字連結不到 4.5:1 */
+/* ����鞱身�冽楛蝬𩤃�--green �函��脖��芣� 4.46:1��銁瘛∠�摨蓥� 4.07:1嚗��摮烾���銝滚� 4.5:1 */
 a {
   color: var(--green-ink);
 }
@@ -266,8 +266,8 @@ textarea.input {
   white-space: nowrap;
 }
 
-/* 細條本身 34 px（含 1 px 下邊線，內框 33 px），可點範圍往下多 11 px 到剛好 44 px（透明）；
-   頁面內容從 44 px 以下開始，不會被它蓋到 */
+/* 蝝唳��祈澈 34 px嚗�鉄 1 px 銝钅�蝺𡄯��扳� 33 px嚗㚁��舫�蝭��敺�銝见� 11 px �啣�憟� 44 px嚗��𤩺�嚗㚁�
+   ��𢒰�批捆敺� 44 px 隞乩��见�嚗䔶���◤摰���� */
 .demo-badge::after {
   content: '';
   position: absolute;
@@ -430,7 +430,7 @@ textarea.input {
   pointer-events: auto;
 }
 
-/* 左上角不放標誌：光點餘額靠右 */
+/* 撌虫�閫雴��暹�隤䕘��厰�擗㗛��惩𢰧 */
 .map-top {
   justify-content: flex-end;
 }
@@ -583,7 +583,7 @@ textarea.input {
   }
 }
 
-/* 右下角（署名的 i）：貼在導覽上緣，整顆 44 px 看得到也點得到；右側工具列在它上面 */
+/* �喃�閫𡜐�蝵脣��� i嚗㚁�鞎澆銁撠舘汗銝羓楠嚗峕㟲憿� 44 px �见��唬�暺𧼮��堆��喳�撌亙��堒銁摰���� */
 .map-page .maplibregl-ctrl-bottom-right {
   bottom: calc(var(--nav-h) + 6px);
   right: 6px;
@@ -592,7 +592,7 @@ textarea.input {
 .map-page .maplibregl-ctrl-attrib.maplibregl-compact {
   min-width: 44px;
   min-height: 44px;
-  /* 右邊留出 44 px 給按鈕（按鈕在右上角絕對定位） */
+  /* �喲��坔枂 44 px 蝯行��𤏪��厰��典𢰧銝𡃏�蝯訫�摰帋�嚗� */
   box-sizing: border-box;
   padding: 2px 44px 2px 0;
   margin: 0;
@@ -616,7 +616,7 @@ textarea.input {
   line-height: 1.5;
 }
 
-/* 指北針放大到好按的尺寸 */
+/* ����脲𦆮憭批�憟賣���偕撖� */
 .maplibregl-ctrl-group .maplibregl-ctrl-compass {
   width: 44px;
   height: 44px;
@@ -656,7 +656,7 @@ textarea.input {
   border-radius: 0;
 }
 
-/* ---------- 樹種照片輪播（iNaturalist，CC0 / CC BY） ---------- */
+/* ---------- 璅寧車�抒�頛芣偘嚗ǎNaturalist嚗龦C0 / CC BY嚗� ---------- */
 
 .carousel {
   background: var(--card);
@@ -923,7 +923,7 @@ textarea.input {
   }
 }
 
-/* 打卡的小驚喜：稀有配件、樹上住戶 */
+/* �枏㨃���撽𡁜�嚗𡁶��厰�隞嗚��邦銝𠹺��� */
 .drop-cards {
   display: grid;
   gap: 10px;
@@ -972,7 +972,7 @@ textarea.input {
   margin-top: 2px;
 }
 
-/* 連結留在小字那一行；點擊範圍用偽元素撐到 44 px 高，不增加列高 */
+/* ����坔銁撠誩����銵䕘�暺墧�蝭���典�����𣂼� 44 px 擃矋�銝滚��惩�擃� */
 .drop-link {
   position: relative;
   color: var(--green-ink);
@@ -1004,7 +1004,7 @@ textarea.input {
   }
 }
 
-/* 圖鑑的「樹上住戶」 */
+/* �㚚����峕邦銝𠹺��嗚�� */
 .insects {
   margin-top: 24px;
   scroll-margin-top: 12px;
@@ -1061,8 +1061,8 @@ textarea.input {
   margin: 8px 0 0;
 }
 
-/* 受保護樹木的印章：在樹名旁邊，是一顆可以點的按鈕（點擊範圍 44 px），紅色手蓋的框、微微歪。
-   樹名很長時整個印章換到下一行 */
+/* �𦯀�霅瑟邦�函��啁�嚗𡁜銁璅孵����嚗峕糓銝�憿�虾隞仿�����𤏪�暺墧�蝭�� 44 px嚗㚁�蝝�𠧧�贝������凝敺格酊��
+   璅孵�敺�𩑈��㟲�见㫲蝡䭾��唬�銝�銵� */
 .tree-page .topbar {
   flex-wrap: wrap;
 }
@@ -1106,7 +1106,7 @@ textarea.input {
   border-radius: 10px;
 }
 
-/* 點開印章之後的說明：頁首下面的一小塊，不是卡片 */
+/* 暺鮋��啁�銋见���牧�𠬍����銝钅𢒰���撠誩�嚗䔶��臬㨃�� */
 .protected-note {
   margin: 0 0 8px;
   padding: 8px 12px;
@@ -1137,6 +1137,7 @@ textarea.input {
   margin: 18px 2px 8px;
   font-family: var(--font-voice);
   font-size: 1.1rem;
+  margin-top: auto;
 }
 
 .glow-line strong {
@@ -1144,7 +1145,7 @@ textarea.input {
   color: #8a6400;
 }
 
-/* 微光的「?」：整顆按鈕 44×44 px，看起來是一個 32 px 的圈；說明展開在下面整列 */
+/* 敺桀�����?�㵪��湧��厰� 44�44 px嚗𣬚�韏瑚��臭��� 32 px ���嚗𥡝牧�𤾸��见銁銝钅𢒰�游� */
 .help-btn {
   display: grid;
   place-items: center;
@@ -1183,7 +1184,7 @@ textarea.input {
   margin: 0;
 }
 
-/* 裝飾圖示：用來代替沒有資訊的佔位框。柔和的圓底加一個線條圖示（和底部導覽同一套） */
+/* 鋆嗪ˇ�𣇉內嚗𡁶鍂靘�誨�踵��㕑�閮羓�雿𥪯�獢�����𣬚��枏��牐��讠�璇嘥�蝷綽�����典�閬賢�銝�憟梹� */
 .ornament {
   display: grid;
   place-items: center;
@@ -1221,7 +1222,7 @@ textarea.input {
   height: 30px;
 }
 
-/* 樹況回報收在「關於這棵樹」裡：不再是一張卡包著另一張卡 */
+/* 璅寞��𧼮𥼚�嗅銁�屸��潮�蹱ㄤ璅嫘�滩ㄐ嚗帋��齿糓銝�撘萄㨃����虫�撘萄㨃 */
 .about .card {
   margin: 12px 0 0;
   padding: 12px 0 0;
@@ -1280,7 +1281,7 @@ textarea.input {
   color: var(--green-ink);
 }
 
-/* 說出口的話慢慢沉進樹裡 */
+/* 隤芸枂���閰望��Ｘ��脫邦鋆� */
 .whisper-sent.drift {
   animation: drift 2.4s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
@@ -1467,14 +1468,14 @@ textarea.input {
   object-fit: cover;
 }
 
-/* 頂端列、取景框所在的空間、底部提示：由上到下排，不再各自絕對定位，所以不會互相蓋住（影片之上用 relative） */
+/* ��垢�𨰜����舀����函�蝛粹�����冽�蝷綽��曹��唬��𡜐�銝滚���䌊蝯訫�摰帋�嚗峕�隞乩�����貉�雿𧶏�敶梁�銋衤��� relative嚗� */
 .scanner-top,
 .scanner-stage,
 .scanner-bottom {
   position: relative;
 }
 
-/* 取景框外的暗色（box-shadow）不要蓋到頂端列與底部提示 */
+/* �𡝗艶獢������莎�box-shadow嚗劐�閬���圈�蝡臬�����冽�蝷� */
 .scanner-top,
 .scanner-bottom {
   z-index: 1;
@@ -1517,7 +1518,7 @@ textarea.input {
   text-align: center;
 }
 
-/* 相機開不了或全黑：取景框的位置換成說明卡（標題、一步步、重新開相機）；空間不夠就在卡片裡捲動 */
+/* �豢��衤�鈭���券�嚗𡁜��舀����蝵格��鞱牧�𤾸㨃嚗��憿䎚���甇交郊����圈��豢�嚗㚁�蝛粹�銝滚�撠勗銁�∠�鋆⊥㬢�� */
 .camera-help {
   width: min(100%, 340px);
   max-height: 100%;
@@ -2025,9 +2026,9 @@ pre.code {
   color: var(--muted);
 }
 
-/* Demo 模式頂端細條讓位 */
+/* Demo 璅∪���垢蝝唳�霈㮖� */
 body.is-demo {
-  /* Demo 細條高度（含安全區）；頁面內容從它下面再空 10 px 開始 */
+  /* Demo 蝝唳�擃睃漲嚗�鉄摰匧���嚗㚁���𢒰�批捆敺𧼮�銝钅𢒰�滨征 10 px �见� */
   --demo-h: calc(34px + env(safe-area-inset-top, 0px));
 }
 
@@ -2320,7 +2321,7 @@ label.btn:focus-within {
 .scan-hint {
   position: absolute;
   left: 50%;
-  /* 掃樹牌改成導覽中間浮出的大按鈕（約高出導覽 26px），提示放在它上方 */
+  /* ��邦�峕㺿�𣂼�閬賭葉�𤘪筑�箇�憭扳��𤏪�蝝���箏�閬� 26px嚗㚁��鞟內�曉銁摰���� */
   bottom: calc(var(--map-base) + 30px);
   transform: translateX(-50%);
   margin: 0;
@@ -2401,7 +2402,7 @@ label.btn:focus-within {
   color: var(--red-ink);
 }
 
-/* 圖層面板開在按鈕旁邊（右下，拇指範圍內） */
+/* �硋惜�Ｘ踎�见銁�厰����嚗�𢰧銝页����蝭���改� */
 .layer-panel {
   top: auto !important;
   right: 72px !important;
@@ -2477,7 +2478,7 @@ label.btn:focus-within {
   flex: 1 1 0;
   min-width: 0;
   text-wrap: balance;
-  /* 句子可以折行；「?」留在同一行 */
+  /* �亙��臭誑�䁅�嚗䜘��?�滨��典�銝�銵� */
 }
 
 .desktop-notice {
@@ -2512,8 +2513,8 @@ label.btn:focus-within {
   height: 220px;
 }
 
-/* ---------- 連線狀態、遷移對話框 ---------- */
-/* 雲端連不上時的連線狀態（不是離線模式：一直重連，連回來自己消失） */
+/* ---------- ������卝���蝘餃�閰望� ---------- */
+/* �脩垢���銝𦠜���������页�銝齿糓�Ｙ�璅∪�嚗帋��湧�������靘�䌊撌望�憭梧� */
 .offline-banner {
   position: fixed;
   z-index: 70;
@@ -2533,7 +2534,7 @@ body.has-offline .demo-badge {
   display: none;
 }
 
-/* 頁面往下讓出橫幅的高度：--offline-h 是橫幅實際的高度（ConnectionBanner 量的，折成兩行時會變高） */
+/* ��𢒰敺�銝贝��箸帖撟��擃睃漲嚗�--offline-h �舀帖撟�祕�𤤿�擃睃漲嚗㇃onnectionBanner �讐�嚗峕��𣂼�銵峕����擃矋� */
 body.has-offline .map-top {
   padding-top: max(calc(var(--offline-h, 32px) + 4px), env(safe-area-inset-top));
 }
@@ -2586,7 +2587,7 @@ body.has-offline .tree-focus {
   box-shadow: var(--shadow);
 }
 
-/* ---------- 新手引導（地圖下方的小抽屜）與徽章慶祝 ---------- */
+/* ---------- �唳�撘訫�嚗�𧑐�碶��寧�撠𤩺𡂝撅頣���噬蝡䭾�蟡� ---------- */
 
 .sr-only {
   position: absolute;
@@ -2665,7 +2666,7 @@ body.has-offline .tree-focus {
 }
 
 .tour-actions .btn {
-  /* 「先不選，下一步」「上一步」「之後再說」要在 360 px 寬排成一列 */
+  /* ���銝漤�嚗䔶�銝�甇乓�溻�䔶�銝�甇乓�溻�䔶�敺��隤芥�滩��� 360 px 撖祆��𣂷��� */
   padding: 0 12px;
 }
 
@@ -2765,9 +2766,9 @@ body.has-offline .tree-focus {
   }
 }
 
-/* 新手任務：地圖上的小入口（左下，在「附近／全市」切換的上方，不和右側地圖工具重疊）與 /me 的任務卡 */
+/* �唳�隞餃�嚗𡁜𧑐�碶�����亙藁嚗�椰銝页��具�屸�餈𡢅��典��滚��𤤿�銝𦠜䲮嚗䔶���𢰧�游𧑐�硋極�琿��𠺪��� /me ��遙�坔㨃 */
 .tasks-chip {
-  /* 在地圖頁首（左上，和光點餘額同一排），不在大拇指會點的弧線上 */
+  /* �典𧑐�㚚�擐吔�撌虫�嚗���厰�擗㗛��䔶��𡜐�嚗䔶��典之��������憫蝺帋� */
   margin-right: auto;
   display: inline-flex;
   align-items: center;
@@ -2822,9 +2823,9 @@ body.has-offline .tree-focus {
   text-align: center;
 }
 
-/* ---------- 集章冊 ---------- */
+/* ---------- ����� ---------- */
 
-/* 背景：台北市輪廓、區界與鄰近縣市；貼滿容器、置中縮放，不接受點擊 */
+/* �峕艶嚗𡁜蝱�堒�頛芸�����諹��啗�蝮��嚗𥡝票皛踹捆�具��蔭銝剔葬�橘�銝齿𦻖�烾��� */
 .outline-bg {
   position: absolute;
   inset: 0;
@@ -2901,7 +2902,7 @@ body.has-offline .tree-focus {
   height: 44px;
 }
 
-/* 桌機的旋轉控制：開在「方向」按鈕旁邊（和圖層面板同一個位置） */
+/* 獢峕����頧㗇綉�塚��见銁�峕䲮�㻫�齿��閙��𠺪����撅日𢒰�踹�銝��衤�蝵殷� */
 .rotate-panel {
   position: absolute;
   z-index: 3;
@@ -3007,9 +3008,9 @@ body.has-offline .tree-focus {
   color: var(--muted);
 }
 
-/* ---------- 底部導覽與分頁頁首 ---------- */
+/* ---------- 摨閖�撠舘汗������擐� ---------- */
 
-/* 抽屜（z-index 10 以上）開著時會蓋過導覽，導覽在地圖按鈕之上 */
+/* �賢�嚗ǔ-index 10 隞乩�嚗厰��埈�����𤾸�閬踝�撠舘汗�典𧑐�𡝗��蓥�銝� */
 .bottom-nav {
   position: fixed;
   z-index: 4;
@@ -3034,7 +3035,7 @@ body.has-offline .tree-focus {
   gap: 2px;
   min-height: 56px;
   color: var(--muted);
-  /* 13 px：5 個分頁在 360 寬各 72 px，最長的標籤「集章冊」「掃樹牌」不折行 */
+  /* 13 px嚗�5 �见���銁 360 撖砍� 72 px嚗峕��瑞�璅嗵惜�屸�蝡惩��溻�峕�璅寧��滢��䁅� */
   font-size: 0.8125rem;
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
@@ -3086,8 +3087,8 @@ body.has-offline .tree-focus {
   stroke-width: 2.25;
 }
 
-/* 中間的大按鈕：浮出導覽列的實心綠圓，每個分頁都是「掃樹牌」。字用和其他分頁一樣的次要色，
-   只有「目前的分頁」才是綠色加粗，所以不會兩個分頁同時看起來像選中 */
+/* 銝剝���之�厰�嚗𡁏筑�箏�閬賢���祕敹���橒�瘥誩�见�����胯�峕�璅寧��溻����典��嗡����銝�璅��甈∟��莎�
+   �芣��𣬚𤌍�滨�����齿��舐��脣�蝎梹���隞乩�����见�������韏瑚��誯�銝� */
 .bottom-cta {
   justify-content: flex-end;
   padding-bottom: 6px;
@@ -3140,13 +3141,13 @@ body.has-offline .tree-focus {
   }
 }
 
-/* 分頁頁面：內容底部留出導覽高度 */
+/* �����𢒰嚗𡁜�摰孵��函��箏�閬賡�摨� */
 .tab-shell .page {
-  /* 導覽高度加上中間浮出的掃樹牌圓鈕（約 34 px）再留一點：頁尾的連結與按鈕不會被蓋住 */
+  /* 撠舘汗擃睃漲�牐�銝剝�瘚桀枂���璅寧��㯄�嚗�� 34 px嚗匧��嗘�暺痹���偏���������蓥���◤�衤� */
   padding-bottom: calc(var(--nav-h) + 52px);
 }
 
-/* 鍵盤聚焦、scrollIntoView 到分頁頁面的東西時，也不要停在導覽與圓鈕底下 */
+/* �萇𥿢�𡁶���scrollIntoView �啣�����Ｙ��梯正���銋煺�閬���典�閬質��㯄�摨蓥� */
 html:has(.tab-shell) {
   scroll-padding-bottom: calc(var(--nav-h) + 48px);
 }
@@ -3173,7 +3174,7 @@ html:has(.tab-shell) {
 }
 
 .balance-pill span {
-  color: #8a6400; /* 4.9:1（#a87a00 只有 3.5:1，不夠） */
+  color: #8a6400; /* 4.9:1嚗�#a87a00 �芣� 3.5:1嚗䔶�憭𩤃� */
 }
 
 .fog-slot {
@@ -3203,7 +3204,7 @@ html:has(.tab-shell) {
   white-space: pre-wrap;
 }
 
-/* 日記一列：做了什麼（粗）＋當時的心情（小膠囊） */
+/* �亥�銝��梹��帋�隞�暻潘�蝎梹�嚗讠訜���敹��嚗���惩�嚗� */
 .journal-what {
   display: flex;
   flex-wrap: wrap;
@@ -3223,7 +3224,7 @@ html:has(.tab-shell) {
   margin: 8px 0;
 }
 
-/* 地圖頁的抽屜（點樹、許願、新手引導）坐在底部導覽上面，導覽一直看得到、點得到 */
+/* �啣�����賢�嚗��璅嫘��迂憿塩��鰵�见�撠𠬍��𣂼銁摨閖�撠舘汗銝𢠃𢒰嚗��閬賭��渡�敺堒����敺堒� */
 .map-page .sheet {
   bottom: var(--nav-h);
   padding-bottom: 24px;
@@ -3241,7 +3242,7 @@ html:has(.tab-shell) {
   }
 }
 
-/* ---------- 迷霧 ---------- */
+/* ---------- 餈琿𧊅 ---------- */
 
 .fog {
   position: relative;
@@ -3278,11 +3279,11 @@ html:has(.tab-shell) {
   pointer-events: none;
 }
 
-/* ---------- 桌機也用手機寬度（市民端） ---------- */
+/* ---------- 獢峕�銋毺鍂�𧢲�撖砍漲嚗��瘞𤑳垢嚗� ---------- */
 
-/* 手機上 .phone-shell／.phone-scroll 不做任何事。寬螢幕（桌機 Demo）把市民端框成手機寬、置中：
-   .phone-shell 用 transform 讓裡面 position: fixed 的元件（地圖、底部導覽、抽屜、慶祝視窗）以這個框為準，
-   不貼到整個螢幕邊；它自己不捲動，捲動交給裡面的 .phone-scroll，fixed 的元件才不會跟著內容捲走。 */
+/* �𧢲�銝� .phone-shell嚗�.phone-scroll 銝滚�隞颱�鈭卝��祝�Ｗ�嚗��璈� Demo嚗㗇�撣��蝡舀��鞉�璈笔祝��蔭銝哨�
+   .phone-shell �� transform 霈栞ㄐ�� position: fixed ���隞塚��啣�����典�閬賬��𡂝撅栶���蟡肽�蝒梹�隞仿�坔�𧢲��箸�嚗�
+   銝滩票�唳㟲�贝攟撟閖�嚗𥕦��芸楛銝齿㬢�𤏪��脣�鈭斤策鋆⊿𢒰�� .phone-scroll嚗靕ixed ���隞嗆�銝齿�頝蠘��批捆�脰粥�� */
 @media (min-width: 600px) {
   body:has(.phone-shell) {
     background: #e4e0d4;
@@ -3304,21 +3305,21 @@ html:has(.tab-shell) {
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
-    /* 像手機一樣不顯示捲軸，免得捲軸吃掉寬度；滾輪與觸控板照樣能捲 */
+    /* �𤩺�璈煺�璅��憿舐內�脰遘嚗��敺埈㬢頠詨��匧祝摨佗�皛曇憚��孛�扳踎�扳見�賣㬢 */
     scrollbar-width: none;
   }
 }
 
-/* ---------- 陪你的動物（地圖上的人物與選擇器） ---------- */
+/* ---------- �芯�����抬��啣�銝羓�鈭箇������膥嚗� ---------- */
 
-/* 地圖上代表你：maplibre 標記，腳底在定位點。maplibre 自己用 transform 擺位置，所以這層不能設 transform */
+/* �啣�銝𠹺誨銵其�嚗饢aplibre 璅躰�嚗諹�摨訫銁摰帋�暺𠺶��maplibre �芸楛�� transform �箔�蝵殷���隞仿�坔惜銝滩�閮� transform */
 .me-avatar {
   width: 56px;
   height: 56px;
   pointer-events: none;
 }
 
-/* Demo：人物可以拖曳。touch-action: none 讓手指拖人物時不會變成捲動或平移地圖 */
+/* Demo嚗帋犖�拙虾隞交��喋��touch-action: none 霈𤘪����鈭箇��������鞉㬢�閙�撟喟宏�啣� */
 .me-avatar.draggable {
   pointer-events: auto;
   cursor: grab;
@@ -3329,7 +3330,7 @@ html:has(.tab-shell) {
   cursor: grabbing;
 }
 
-/* 往左走時水平翻轉（美術面向右）；走路與站著同一個畫框，換圖時不會跳 */
+/* 敺�撌西粥��偌撟喟蕃頧㚁�蝢舘��Ｗ��喉�嚗𥡝粥頝航�蝡躰��䔶��讠𧞄獢���𥕦������歲 */
 .me-avatar[data-facing='left'] img {
   transform: scaleX(-1);
 }
@@ -3339,7 +3340,7 @@ html:has(.tab-shell) {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  /* 正式美術（站著的動物）不加佔位的兩圈：用貼著輪廓的白邊與一點陰影，在綠色的樹與街景上一樣看得出「這是你」 */
+  /* 甇��蝢舘�嚗���㛖��閧�嚗劐��牐�雿滨��拙�嚗𡁶鍂鞎潸�頛芸���蒾�𡃏�銝�暺鮋苊敶梧��函��脩�璅寡�銵埈艶銝𠹺�璅��敺堒枂�屸�蹱糓雿𨬭�� */
   filter: drop-shadow(0 0 1.5px #fff) drop-shadow(0 0 1px #fff) drop-shadow(0 3px 3px rgba(44, 58, 46, 0.4));
 }
 
@@ -3348,7 +3349,7 @@ html:has(.tab-shell) {
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  /* 佔位圖底部有一行小字（正式美術換上後就沒有）：標籤往下讓開，不疊在上面 */
+  /* 雿𥪯��硋��冽�銝�銵��摮梹�甇��蝢舘��𥕢�敺�停瘝埝�嚗㚁�璅嗵惜敺�銝贝��页�銝滨��其��� */
   margin-top: 8px;
   padding: 0 7px;
   border-radius: 999px;
@@ -3359,7 +3360,7 @@ html:has(.tab-shell) {
   white-space: nowrap;
 }
 
-/* 「可以拖曳牠移動位置」：人物上方的小氣泡，安靜、可關閉 */
+/* ��虾隞交��喟�蝘餃�雿滨蔭�㵪�鈭箇�銝𦠜䲮���瘞�部嚗���栶��虾�𣈯� */
 .me-avatar-hint {
   position: absolute;
   bottom: 100%;
@@ -3370,7 +3371,7 @@ html:has(.tab-shell) {
   gap: 0;
   width: max-content;
   max-width: min(230px, calc(100vw - 24px));
-  /* 氣泡在人物頭上方留一段空，不蓋到牠 */
+  /* 瘞�部�其犖�拚�銝𦠜䲮�嗘�畾萇征嚗䔶��见��� */
   margin-bottom: 14px;
   padding: 0 0 0 10px;
   border-radius: 999px;
@@ -3456,28 +3457,28 @@ html:has(.tab-shell) {
   overflow-wrap: anywhere;
 }
 
-/* 五隻動物一排：4 個字的名字（臺灣黑狗）在 360 px 要放得進一格，所以比共用的手寫字規則小一點（要比後面那條規則特定） */
+/* 鈭娪塀�閧�銝��𡜐�4 �见����摮梹��箇�暺𤑳�嚗匧銁 360 px 閬�𦆮敺烾�脖��潘���隞交��梁鍂���撖怠�閬誩�撠譍�暺痹�閬��敺屸𢒰���閬誩��孵�嚗� */
 .animal-picker .animal-name {
   font-size: 0.75rem;
   letter-spacing: 0;
 }
 
-/* ---------- 點樹：拉近畫面 ---------- */
+/* ---------- 暺墧邦嚗𡁏�餈𤑳𧞄�� ---------- */
 
-/* 蓋住地圖與底部導覽（導覽 z-index 4）；頂端一列、中間的大樹與圈、右下的動物、底部「返回」 */
+/* �衤��啣�����典�閬踝�撠舘汗 z-index 4嚗㚁���垢銝��𨰜��葉�梶�憭扳邦�����𢰧銝讠��閧�����具�諹��𠺶�� */
 .tree-focus {
   position: fixed;
   inset: 0 0 var(--nav-h) 0;
   z-index: 20;
   display: flex;
   flex-direction: column;
-  padding: calc(12px + env(safe-area-inset-top, 0px)) 16px 34px; /* 下面留給導覽中間凸出來的掃樹牌鈕 */
+  padding: calc(12px + env(safe-area-inset-top, 0px)) 16px 34px; /* 銝钅𢒰�嗵策撠舘汗銝剝��詨枂靘����邦�屸� */
   background: radial-gradient(ellipse at 50% 40%, #f4f8ef 0%, #e6efe0 62%, #dbe7d4 100%);
   overflow: hidden;
   animation: focus-in 0.35s ease-out;
 }
 
-/* 拉近畫面開著時導覽留在最上面：中間的「掃樹牌」大按鈕凸出導覽，不能被拉近畫面切掉 */
+/* �㕑��恍𢒰�贝����閬賜��冽�銝𢠃𢒰嚗帋葉�梶��峕�璅寧��滚之�厰��詨枂撠舘汗嚗䔶��質◤�㕑��恍𢒰��� */
 .phone-shell:has(.tree-focus) .bottom-nav {
   z-index: 21;
 }
@@ -3511,7 +3512,7 @@ html:has(.tab-shell) {
   font-weight: 400;
 }
 
-/* 大樹與圈：圈的位置是舞台的百分比，所以螢幕大小改了，圈還是在樹冠上 */
+/* 憭扳邦���嚗𡁜����蝵格糓�𧼮蝱��蓡���嚗峕�隞亥攟撟訫之撠𤩺㺿鈭������臬銁璅孵�銝� */
 .tree-focus-stage {
   position: relative;
   flex: 1;
@@ -3582,7 +3583,7 @@ html:has(.tab-shell) {
   font-size: 0.75rem;
 }
 
-/* 位置：摸摸樹在樹冠頂、回報與樹洞在兩側，認養在樹冠左下（右下的樹幹旁站著你的動物） */
+/* 雿滨蔭嚗𡁏𨰫�豢邦�冽邦�𣳇�����梯�璅寞��典��湛�隤漤��冽邦�惩椰銝页��喃���邦撟寞�蝡躰�雿删��閧�嚗� */
 .ring-touch {
   left: 50%;
   top: 16%;
@@ -3603,7 +3604,7 @@ html:has(.tab-shell) {
   animation-delay: 180ms;
 }
 
-/* 還不能用：灰色、沒有發光，但還是可以點（會說為什麼） */
+/* ����賜鍂嚗𡁶��脯����厩䔄�㚁�雿���臬虾隞仿�嚗��隤芰�隞�暻潘� */
 .focus-ring.off {
   background: #e4e4dc;
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.7);
@@ -3619,7 +3620,7 @@ html:has(.tab-shell) {
   outline-offset: 4px;
 }
 
-/* 提示浮在舞台上緣（樹上面）、不佔版面（不然折成兩行會把樹往上推），幾秒後自己消失（TreeFocusView 的 NOTE_MS） */
+/* �鞟內瘚桀銁�𧼮蝱銝羓楠嚗�邦銝𢠃𢒰嚗剹���雿𠉛��ｇ�銝滨��䀹��抵����璅孵�銝𦠜綫嚗㚁�撟曄�敺諹䌊撌望�憭梧�TreeFocusView �� NOTE_MS嚗� */
 .tree-focus-note {
   position: absolute;
   top: 0;
@@ -3652,7 +3653,7 @@ html:has(.tab-shell) {
   }
 }
 
-/* 你的動物：站在樹下，樹幹右邊的草地上 */
+/* 雿删��閧�嚗𡁶��冽邦銝页�璅孵凳�喲�����唬� */
 .tree-focus-animal {
   position: absolute;
   left: 58%;
@@ -3662,7 +3663,7 @@ html:has(.tab-shell) {
   pointer-events: none;
 }
 
-/* 打開拉近畫面時從左邊走進來（走路美術，WALK_IN_MS 與這裡同長） */
+/* �㯄��㕑��恍𢒰���撌阡�韏圈�脖�嚗�粥頝舐�銵橒�WALK_IN_MS ���躰ㄐ�屸𩑈嚗� */
 .tree-focus-animal.walking-in {
   animation: focus-walk-in 1.4s linear both;
 }
@@ -3682,7 +3683,6 @@ html:has(.tab-shell) {
   flex-wrap: wrap;
   align-items: center;
   gap: 10px;
-  margin-top: auto;
   padding-top: 8px;
 }
 
@@ -3696,7 +3696,7 @@ html:has(.tab-shell) {
   color: #173f33;
 }
 
-/* 打卡成功回到拉近畫面：樹冠上跳一下的獎勵卡（光點、掉落），點一下或幾秒後收起 */
+/* �枏㨃�𣂼��𧼮��㕑��恍𢒰嚗𡁏邦�牐�頝喃�銝讠��𤾸䠀�∴��厰�����踝�嚗屸�銝�銝𧢲�撟曄�敺峕𤣰韏� */
 .checkin-reward {
   position: absolute;
   left: 50%;
@@ -3743,7 +3743,7 @@ html:has(.tab-shell) {
   text-align: left;
 }
 
-/* 拉近畫面的卡（摸摸樹、回報、留言在樹洞、樹的資料）：從底部升起，蓋在樹與圈上面，留出「返回」那一列 */
+/* �㕑��恍𢒰��㨃嚗�𨰫�豢邦����晞���閮��冽邦瘣𠺶��邦����辷�嚗𡁜�摨閖���絲嚗諹��冽邦���銝𢠃𢒰嚗𣬚��箝�諹��𠺶�漤�銝��� */
 .tree-focus-sheet {
   position: absolute;
   left: 12px;
@@ -3780,7 +3780,7 @@ html:has(.tab-shell) {
   padding: 16px;
 }
 
-/* 卡片裡的樹洞、回報不要再一層框 */
+/* �∠�鋆∠�璅寞�����曹�閬��銝�撅斗� */
 .focus-card-body .card,
 .focus-card-body .whisper {
   margin: 0;
@@ -3854,7 +3854,7 @@ html:has(.tab-shell) {
   font-size: 1.1rem;
 }
 
-/* 呼吸：吸氣時圓慢慢變大（4 秒），吐氣時變小 */
+/* �澆𢙺嚗𡁜𢙺瘞���𤘪��Ｚ�憭改�4 蝘𡜐�嚗��瘞��霈𠰴� */
 .touch-breath {
   width: 96px;
   height: 96px;
@@ -3868,7 +3868,7 @@ html:has(.tab-shell) {
   transform: scale(1);
 }
 
-/* 冥想：一圈慢慢填滿的時鐘 */
+/* �交�嚗帋�����Ｗ‵皛輻���� */
 .touch-clock {
   width: 88px;
   height: 88px;
@@ -3877,8 +3877,8 @@ html:has(.tab-shell) {
   mask: radial-gradient(circle, transparent 54%, #000 56%);
 }
 
-/* 看路線時：拉近畫面收起，底部一列「回到這棵樹」與路線長度 */
-/* 看路線時底部導覽還在（地圖頁），這一列坐在導覽上面 */
+/* �贝楝蝺𡁏�嚗𡁏�餈𤑳𧞄�Ｘ𤣰韏瘀�摨閖�銝��𨰜����圈�蹱ㄤ璅嫘�滩�頝舐��瑕漲 */
+/* �贝楝蝺𡁏�摨閖�撠舘汗��銁嚗�𧑐�㚚�嚗㚁��嗘��堒��典�閬賭��� */
 .route-bar {
   position: absolute;
   left: 12px;
@@ -3920,7 +3920,7 @@ html:has(.tab-shell) {
   cursor: pointer;
 }
 
-/* 「怎麼走」路線中間的小膠囊：「約 120 公尺・步行 2 分鐘」 */
+/* �峕�𡡞獐韏啜�滩楝蝺帋葉�梶�撠讛��𠺪��𣬚� 120 �砍偕�餅郊銵� 2 ����� */
 .route-label {
   padding: 4px 12px;
   border-radius: 999px;
@@ -3958,11 +3958,11 @@ html:has(.tab-shell) {
 }
 
 .anchor-target {
-  /* 跳到 #whisper、#report 時，上緣要避開 Demo 模式的細條（約 34 px） */
+  /* 頝喳� #whisper��#report ���銝羓楠閬���� Demo 璅∪���敦璇嘅�蝝� 34 px嚗� */
   scroll-margin-top: 52px;
 }
 
-/* ---------- 樹洞頁（D） ---------- */
+/* ---------- 璅寞����D嚗� ---------- */
 .nearby-more {
   margin-top: 8px;
 }
@@ -3996,7 +3996,7 @@ html:has(.tab-shell) {
 .journal-tabs {
   margin: 20px 0 12px;
 }
-/* 附近的樹不屬於上面的分頁：用虛線隔開，切分頁時才不會像是同一份內容 */
+/* �����邦銝滚惇�潔��Ｙ����嚗𡁶鍂�𤤿��娪�嚗��������銝齿��𤩺糓�䔶�隞賢�摰� */
 .journal-nearby {
   margin-top: 28px;
   padding-top: 18px;
@@ -4019,9 +4019,9 @@ html:has(.tab-shell) {
   overflow-wrap: anywhere;
 }
 
-/* ---------- 集章冊地圖（C） ---------- */
+/* ---------- ����𠰴𧑐�吔�C嚗� ---------- */
 
-/* 繪本紙面：色票與 colors.ts 的 PANEL_BG／INK_EDGE 同步（colors.ts 是對比測試的來源） */
+/* 蝜芣𧋦蝝䠷𢒰嚗朞𠧧蟡刻� colors.ts �� PANEL_BG嚗苢NK_EDGE �峕郊嚗Ếolors.ts �臬�瘥娍葫閰衣�靘��嚗� */
 .atlas {
   --stamp-paper: #eadfc4;
   --stamp-edge: #4d4230;
@@ -4037,7 +4037,7 @@ html:has(.tab-shell) {
 
 .atlas-crumbs button {
   min-height: 44px;
-  /* 「全市」兩個字只有 38 px 寬：點擊範圍至少 44 px */
+  /* ���撣��滚��见��芣� 38 px 撖穿�暺墧�蝭���喳� 44 px */
   min-width: 44px;
   padding: 0 4px;
   border: 0;
@@ -4067,7 +4067,7 @@ html:has(.tab-shell) {
   display: block;
   width: 100%;
   height: auto;
-  /* 地圖不要比半個螢幕高太多，下面的狀態卡標題才在第一屏（數字同步 CityMap.tsx 的 CITY_MAP_VH） */
+  /* �啣�銝滩�瘥𥪜��贝攟撟閖�憭芸�嚗䔶��Ｙ����见㨃璅䠷��滚銁蝚砌�撅𧶏��詨��峕郊 CityMap.tsx �� CITY_MAP_VH嚗� */
   max-height: 36vh;
   max-height: 36svh;
 }
@@ -4079,12 +4079,12 @@ html:has(.tab-shell) {
   stroke-linejoin: round;
   vector-effect: non-scaling-stroke;
   cursor: pointer;
-  /* 連點兩下進里地圖，不要被當成放大頁面 */
+  /* ����拐��脤��啣�嚗䔶�閬�◤�嗆��曉之��𢒰 */
   touch-action: manipulation;
   transition: stroke-width 0.15s;
 }
 
-/* 還沒蓋章的空白紙格：虛線邊 */
+/* ����讠���征�賜��潘��𤤿��� */
 .atlas-region[data-tier='none'] {
   stroke-dasharray: 5 4;
 }
@@ -4300,7 +4300,7 @@ html:has(.tab-shell) {
   }
 }
 
-/* ---------- 加到主畫面：平台切換 ---------- */
+/* ---------- �惩�銝餌𧞄�ｇ�撟喳蝱��� ---------- */
 
 .install-tabs {
   display: flex;
@@ -4351,9 +4351,9 @@ html:has(.tab-shell) {
   height: 100%;
 }
 
-/* ---------- App 內建瀏覽器提醒 ---------- */
+/* ---------- App �批遣�讛汗�冽��� ---------- */
 
-/* 貼在頂端、蓋在頁面上（地圖頁也看得到）；桌機在手機框內 */
+/* 鞎澆銁��垢����券��Ｖ�嚗�𧑐�㚚�銋毺�敺堒�嚗㚁�獢峕��冽�璈���� */
 .in-app-notice {
   position: fixed;
   z-index: 60;
@@ -4377,7 +4377,7 @@ html:has(.tab-shell) {
   gap: 8px;
 }
 
-/* ---------- 開放 API（/developers）與 API 用戶端（/gov、/vendor） ---------- */
+/* ---------- �𧢲𦆮 API嚗�/developers嚗㕑� API �冽�蝡荔�/gov��/vendor嚗� ---------- */
 
 .dev-toc {
   display: flex;
@@ -4617,9 +4617,9 @@ html:has(.tab-shell) {
   }
 }
 
-/* ---------- 大地圖上的里路線（集章冊「開始」） ---------- */
+/* ---------- 憭批𧑐�碶����頝舐�嚗��蝡惩��屸�憪卝�㵪� ---------- */
 
-/* 頂端列放在光點餘額下面：頁首換行，列佔滿一行 */
+/* ��垢�埈𦆮�典�暺鮋�憿滢��ｇ�����𥡝�嚗��雿娍遛銝�銵� */
 .map-top.has-tour {
   flex-wrap: wrap;
 }
@@ -4662,7 +4662,7 @@ html:has(.tab-shell) {
   border-color: var(--line);
 }
 
-/* 停靠樹是按鈕：重設預設樣式、放大點擊範圍（圓本身 28 px，點擊範圍 40 px） */
+/* �𣈯�璅寞糓�厰�嚗𡁻�閮剝�閮剜見撘譌��𦆮憭折��羓��㵪��𤘪𧋦頨� 28 px嚗屸��羓��� 40 px嚗� */
 .route-pin.tour-pin {
   padding: 0;
   font-family: inherit;
@@ -4672,7 +4672,7 @@ html:has(.tab-shell) {
 .route-pin.tour-pin::before {
   content: '';
   position: absolute;
-  inset: -7px; /* 1 px 邊框在 padding box 外：32 px 的鈕 +(-7 × 2) = 44 px */
+  inset: -7px; /* 1 px �𦠜��� padding box 憭吔�32 px ��� +(-7 � 2) = 44 px */
 }
 
 .route-pin.tour-pin.next {
@@ -4689,7 +4689,7 @@ html:has(.tab-shell) {
   outline-offset: 2px;
 }
 
-/* ---------- Demo 切換台 ---------- */
+/* ---------- Demo ����� ---------- */
 
 .demo-stops {
   list-style: none;
@@ -4711,7 +4711,7 @@ html:has(.tab-shell) {
   border-bottom: 0;
 }
 
-/* 箭頭固定在右側一欄、跨兩列置中 */
+/* 蝞剝��箏��典𢰧�港�甈���楊�拙�蝵桐葉 */
 .demo-stops .menu-link::after {
   grid-column: 2;
   grid-row: 1 / span 2;
@@ -4725,7 +4725,7 @@ html:has(.tab-shell) {
   font-weight: 700;
 }
 
-/* 離開 Demo：紅色實心，放在切換台最下面 */
+/* �ａ� Demo嚗𡁶��脣祕敹���曉銁����唳�銝钅𢒰 */
 .demo-exit {
   margin-top: 24px;
   min-height: 48px;
@@ -4740,9 +4740,9 @@ html:has(.tab-shell) {
   background: var(--red-ink);
 }
 
-/* ---------- 我的 ---------- */
+/* ---------- �𤑳� ---------- */
 
-/* 繪本感：手剪般不對稱的圓角、暖色紙底、柔和有位移的陰影。全部只用既有的色彩變數。 */
+/* 蝜芣𧋦����见��砌�撠滨迂���閫鉝����脩�摨𨰻����峕�雿滨宏��苊敶晞����典蘨�冽𠳿�厩��脣蔗霈𦠜彍�� */
 .me-hero {
   --me-wobble: 22px 18px 24px 16px / 18px 24px 16px 22px;
   position: relative;
@@ -4767,7 +4767,7 @@ html:has(.tab-shell) {
   padding-bottom: 10px;
 }
 
-/* 腳下的一小塊草地，像用蠟筆塗出來的 */
+/* �喃����撠誩��匧𧑐嚗���刻�蝑���箔��� */
 .me-scene::before {
   content: '';
   position: absolute;
@@ -4792,13 +4792,13 @@ html:has(.tab-shell) {
   margin-bottom: 4px;
 }
 
-/* 小芽是這一頁的主角：比旁邊陪你的動物大一點 */
+/* 撠讛𡂝�舫�嗘����銝餉�嚗𡁏�����芯�����拙之銝�暺� */
 .me-sprout {
   width: 116px;
   height: 116px;
 }
 
-/* 小芽身邊的微光：累計光點越多越多點；慢慢明滅，減少動態時靜止 */
+/* 撠讛𡂝頨恍���凝�㚁�蝝航��厰�頞𠰴�頞𠰴�暺痹��Ｘ��擧�嚗峕�撠穃��𧢲��𨀣迫 */
 .me-glows {
   position: absolute;
   inset: -12px;
@@ -4864,7 +4864,7 @@ html:has(.tab-shell) {
 .me-grow > div {
   height: 100%;
   border-radius: 99px;
-  /* 成長條是收集到的「光」：金色，不用介面的綠 */
+  /* �鞾𩑈璇脲糓�園��啁�����㵪��𤏸𠧧嚗䔶��其��Ｙ�蝬� */
   background: linear-gradient(90deg, #f6d77c, var(--glow) 60%, #e3a935);
   transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -4873,7 +4873,7 @@ html:has(.tab-shell) {
   margin: 8px 0 0;
 }
 
-/* 成長條下面的三個階段：走到的深綠、現在這一階粗體，沒走到的淡 */
+/* �鞾𩑈璇苷��Ｙ�銝匧�钅�畾蛛�韏啣���楛蝬𨬭��𣶹�券�嗘��𡒊�擃䈑�瘝坿粥�啁�瘛� */
 .me-stages {
   display: flex;
   justify-content: space-between;
@@ -4960,7 +4960,7 @@ html:has(.tab-shell) {
   }
 }
 
-/* 換裝 */
+/* �𥡝� */
 .me-chips {
   gap: 8px;
 }
@@ -4971,7 +4971,7 @@ html:has(.tab-shell) {
   border-radius: 18px 14px 18px 14px / 14px 18px 14px 18px;
 }
 
-/* 光點紀錄 */
+/* �厰�蝝��� */
 .me-page .ledger li {
   display: block;
   padding: 0;
@@ -5042,7 +5042,7 @@ html:has(.tab-shell) {
   margin-top: 6px;
 }
 
-/* 成長徽章 */
+/* �鞾𩑈敺賜� */
 .me-badges-head {
   display: grid;
   gap: 0;
@@ -5059,7 +5059,7 @@ html:has(.tab-shell) {
   font-size: 1.05rem;
 }
 
-/* 一枚一列：左邊 56 px 小圖、右邊名稱與說明（規格 08 §4）；沒得到的圖淡成剪影 */
+/* 銝��帋��梹�撌阡� 56 px 撠誩���𢰧�𠰴�蝔梯�隤芣�嚗���� 08 禮4嚗㚁�瘝鍦��啁��𡝗楚�𣂼�敶� */
 .me-badge-list {
   display: grid;
   margin: 4px 0 0;
@@ -5097,7 +5097,7 @@ html:has(.tab-shell) {
   min-width: 0;
 }
 
-/* 我的區（從頂部的卡移來）：一列，右邊是「換一區」 */
+/* �𤑳���嚗�������㨃蝘颱�嚗㚁�銝��梹��喲��胯�峕�銝����� */
 .me-district-row::after {
   display: none;
 }
@@ -5117,7 +5117,7 @@ html:has(.tab-shell) {
   font-weight: 600;
 }
 
-/* App 內的確認框（代替瀏覽器的 confirm()） */
+/* App �抒�蝣箄�獢��隞�𤜯�讛汗�函� confirm()嚗� */
 .confirm-title {
   margin: 0 0 8px;
   font-size: 1.15rem;
@@ -5143,7 +5143,7 @@ html:has(.tab-shell) {
   color: #fff;
 }
 
-/* 設定與其他：安靜、縮在底下，不做成卡片 */
+/* 閮剖����隞吔�摰厰���葬�典�銝页�銝滚��𣂼㨃�� */
 .me-settings {
   margin: 28px 0 16px;
   padding-top: 14px;
@@ -5180,7 +5180,7 @@ html:has(.tab-shell) {
   font-size: 0.9rem;
 }
 
-/* 頁尾：以陪你的動物收尾，不以紅字收尾 */
+/* ��偏嚗帋誑�芯�����拇𤣰撠橘�銝滢誑蝝���嗅偏 */
 .me-closing {
   display: flex;
   align-items: center;
@@ -5198,9 +5198,9 @@ html:has(.tab-shell) {
   object-fit: contain;
 }
 
-/* ---------- 探索與樹洞 ---------- */
+/* ---------- �Ｙ揣��邦瘣� ---------- */
 
-/* 迷霧：座標還在查時的占位框，高度跟地圖一樣，不讓版面跳動 */
+/* 餈琿𧊅嚗𡁜漣璅䠷��冽䰻����牐�獢��擃睃漲頝笔𧑐�碶�璅��銝滩���𢒰頝喳� */
 .fog-pending {
   display: grid;
   place-items: center;
@@ -5211,7 +5211,7 @@ html:has(.tab-shell) {
   position: static;
 }
 
-/* 地圖左下角的按鈕（「還有 N 處走過的地方 ›」「看全市」「回到我走過的地方」）：右下角是縮放鈕與署名 */
+/* �啣�撌虫�閫垍��厰�嚗��屸��� N �閗粥�𡒊��唳䲮 �箝�溻�𣬚��典��溻����唳�韏圈���𧑐�嫘�㵪�嚗𡁜𢰧銝贝��舐葬�暸���蔡�� */
 .fog-actions {
   position: absolute;
   left: 10px;
@@ -5224,7 +5224,7 @@ html:has(.tab-shell) {
   max-width: calc(100% - 70px);
 }
 
-/* 空狀態與錯誤的卡片：繪本的手繪邊（四角不一樣圓）、柔光陰影 */
+/* 蝛箇��贝��航炊��㨃���蝜芣𧋦���蝜芷�嚗��閫雴�銝�璅��嚗剹����厰苊敶� */
 .fog-card {
   display: flex;
   align-items: center;
@@ -5271,7 +5271,7 @@ html:has(.tab-shell) {
   border-color: var(--amber);
 }
 
-/* 底圖載入失敗：蓋在地圖中間 */
+/* 摨訫�頛匧�憭望�嚗朞��典𧑐�碶葉�� */
 .fog-overlay {
   position: absolute;
   top: 50%;
@@ -5281,7 +5281,7 @@ html:has(.tab-shell) {
   transform: translateY(-50%);
 }
 
-/* 日記裡的「查看樹木」：連結樣式＋箭頭，文字和上面的內容對齊同一欄 */
+/* �亥�鋆∠��峕䰻�𧢲邦�具�㵪����璅��嚗讠悌�哨�����䔶��Ｙ��批捆撠漤��䔶�甈� */
 .journal-more {
   display: inline-flex;
   align-items: center;
@@ -5315,28 +5315,28 @@ html:has(.tab-shell) {
   }
 }
 
-/* 分段切換的焦點框畫在按鈕裡面：外圈深色、內圈米色，選中（綠底）與未選中都看得到，不擠到旁邊的按鈕 */
+/* ��挾������暺墧��怠銁�厰�鋆⊿𢒰嚗𡁜���楛�脯�����掖�莎��訾葉嚗��摨𤏪���𧊋�訾葉�賜�敺堒�嚗䔶��惩��������� */
 .segmented button:focus-visible {
   outline: 3px solid var(--ink);
   outline-offset: -1px;
   box-shadow: inset 0 0 0 3px var(--card);
 }
 
-/* 附近的樹：列與列之間只留列表的間距，不再疊上卡片自己的外距 */
+/* �����邦嚗𡁜����銋钅��芰��𡑒”���頝嘅�銝滚��𠹺��∠��芸楛���頝� */
 .nearby-item.card {
   margin: 0;
 }
 
-/* ---------- 集章冊 ---------- */
+/* ---------- ����� ---------- */
 
-/* 紙紋：面板像一頁微微有顆粒的紙（顏色用 backgroundColor 內聯，圖案在這裡） */
+/* 蝝嗵�嚗𡁻𢒰�踹�銝���凝敺格�憿�����嚗���脩鍂 backgroundColor �扯�嚗��獢�銁�躰ㄐ嚗� */
 .atlas-panel svg {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .3 0 0 0 0 .25 0 0 0 0 .15 0 0 0 .1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* 選了區或里之後，狀態卡的標題列捲進畫面（只捲到剛好看得到，見 reveal.ts），不需要額外的 scroll-margin */
+/* �訾����㚚�銋见�嚗𣬚��见㨃���憿���脤�脩𧞄�ｇ��芣㬢�啣�憟賜�敺堒�嚗諹� reveal.ts嚗㚁�銝漤�閬��憭𣇉� scroll-margin */
 
-/* 蓋上去的章，每枚微微歪一點 */
+/* �衤��餌�蝡𩤃�瘥𤩺�敺桀凝甇芯�暺� */
 .stamp-tier .icon,
 .stamp-list .icon {
   filter: drop-shadow(0 1px 1px rgba(77, 66, 48, 0.25));
@@ -5348,7 +5348,7 @@ html:has(.tab-shell) {
   transform: rotate(3deg);
 }
 
-/* 里列表 */
+/* ���銵� */
 .village-list-wrap {
   margin: 8px 0;
 }
@@ -5421,17 +5421,17 @@ html:has(.tab-shell) {
   background: var(--green);
 }
 
-/* 出處：一行小字 */
+/* �箄�嚗帋�銵��摮� */
 .atlas-credit {
   margin: 12px 0 0;
   line-height: 1.5;
 }
 
-/* ---------- 地圖與全站 ---------- */
+/* ---------- �啣����蝡� ---------- */
 
-/* 手寫感的聲音：卡片標題、區塊標題、章與徽章的名字、關鍵數字都用 --font-voice（霞鶩文楷）；
-   內文、說明、按鈕、表單維持 UI 字。霞鶩文楷在小字會變細，所以這裡只放 ≥ 14 px 的文字，
-   `max(1em, 0.875rem)` 保證不會小於 14 px。 */
+/* �见神�毺��脤𨺗嚗𡁜㨃���憿䎚���憛𦠜�憿䎚�����噬蝡删��滚�����菜彍摮烾��� --font-voice嚗��曊拇�璆瘀�嚗�
+   �扳���牧�汿����𨰻��”�桃雁�� UI 摮𨰜���曊拇�璆瑕銁撠誩����蝝堆���隞仿�躰ㄐ�芣𦆮 �� 14 px ���摮梹�
+   `max(1em, 0.875rem)` 靽肽�銝齿�撠𤩺䲰 14 px�� */
 .tile > strong,
 .stamp-list strong,
 .atlas-tier,
@@ -5455,26 +5455,26 @@ html:has(.tab-shell) {
   letter-spacing: 0.01em;
 }
 
-/* 數字：關鍵數字（章數、棵數）用手寫字，仍然等寬對齊 */
+/* �詨�嚗𡁻��菜彍摮梹�蝡䭾彍��ㄤ�賂��冽�撖怠�嚗䔶��嗥�撖砍�朣� */
 .atlas-big strong,
 .stat strong,
 .stats strong {
   font-variant-numeric: tabular-nums;
 }
 
-/* 地圖頁首：左邊新手任務、右邊光點餘額，一排；有路線時頂端列換到下一排 */
+/* �啣����嚗𡁜椰�𦠜鰵�衤遙�踺��𢰧�𠰴�暺鮋�憿㵪�銝��𡜐��㕑楝蝺𡁏���垢�埈��唬�銝��� */
 .map-top .tasks-chip,
 .map-top .balance-pill {
   flex: none;
 }
 
-/* 遷移提示：不是對話框，是浮在導覽上方的小卡。不擋住畫面、不鎖背景，使用者照常看自己的頁面 */
+/* �瑞宏�鞟內嚗帋��臬�閰望�嚗峕糓瘚桀銁撠舘汗銝𦠜䲮����～����衤��恍𢒰����𤥁��荔�雿輻鍂���撣貊��芸楛����� */
 .migrate-banner {
   position: fixed;
   z-index: 60;
   left: 12px;
   right: 12px;
-  /* 導覽中間的大按鈕高出導覽約 30 px，小卡坐在它上面，不蓋住 */
+  /* 撠舘汗銝剝���之�厰�擃睃枂撠舘汗蝝� 30 px嚗���∪��典�銝𢠃𢒰嚗䔶��衤� */
   bottom: calc(var(--nav-h) + 36px);
   max-width: 440px;
   margin: 0 auto;
@@ -5525,9 +5525,9 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   }
 }
 
-/* ---------- 地圖與樹洞 ---------- */
+/* ---------- �啣���邦瘣� ---------- */
 
-/* 許願小樹苗：按鈕是 44 px 以上的透明可點範圍，圖案（.wish-marker-art）保持圖案本身的視覺大小 */
+/* 閮梢�撠𤩺邦�梹��厰��� 44 px 隞乩����𤩺��舫�蝭��嚗��獢��.wish-marker-art嚗劐����獢�𧋦頨怎�閬𤥁死憭批� */
 .wish-marker {
   display: grid;
   place-items: center;
@@ -5539,7 +5539,7 @@ body:not(:has(.bottom-nav)) .migrate-banner {
 .wish-marker {
   position: relative;
 }
-/* 「許願中」：小樹苗頭上的金色星星，字在星星中間 */
+/* �諹迂憿䀝葉�㵪�撠𤩺邦�烾�銝羓��𤏸𠧧���嚗���冽��煺葉�� */
 .wish-tag {
   position: absolute;
   left: 50%;
@@ -5558,7 +5558,7 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   line-height: 1;
   pointer-events: none;
 }
-/* 今天澆水的狀態：樹苗右下角的小圓章。水滴＝今天還能澆，勾＝今天澆過（澆過的星星也淡一點） */
+/* 隞𠰴予瞉�偌����页�璅寡��喃�閫垍�撠誩�蝡𨬭��偌皛湛�隞𠰴予���瞉���橘�隞𠰴予瞉��嚗���𡒊����銋�楚銝�暺痹� */
 .wish-water {
   position: absolute;
   right: 0;
@@ -5601,7 +5601,7 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.25));
 }
 
-/* 資料出處 ⓘ 放左下：離開底部中央的主按鈕和右側工具列（仍一直看得到，點開是完整出處） */
+/* 鞈���箄� �� �曉椰銝页��ａ�摨閖�銝剖亢��蜓�厰���𢰧�游極�瑕�嚗��銝��渡�敺堒�嚗屸��𧢲糓摰峕㟲�箄�嚗� */
 .map-page .maplibregl-ctrl-bottom-left {
   bottom: calc(var(--nav-h) + 6px);
   left: 6px;
@@ -5617,7 +5617,7 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   padding: 2px 12px 2px 44px;
   max-width: min(calc(100vw - 92px), 320px);
 }
-/* 收著的時候是「ⓘ 資料來源」一顆藥丸：只有一個 i 看不出是什麼。展開後回到 44 px 的圓鈕 */
+/* �嗉�����蹱糓�𢞖� 鞈��靘���滢�憿�𠯫銝賂��芣�銝��� i �衤��箸糓隞�暻潦����见��𧼮� 44 px ����� */
 .map-page .maplibregl-ctrl-bottom-left .maplibregl-ctrl-attrib.maplibregl-compact:not(.maplibregl-compact-show) {
   min-width: 104px;
 }
@@ -5626,7 +5626,7 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   background-position: 10px center;
 }
 .map-page .maplibregl-ctrl-bottom-left .maplibregl-compact:not(.maplibregl-compact-show) .maplibregl-ctrl-attrib-button::after {
-  content: '資料來源';
+  content: '鞈��靘��';
   position: absolute;
   left: 40px;
   top: 0;
@@ -5635,12 +5635,12 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   color: var(--ink);
   pointer-events: none;
 }
-/* 展開時抬高到主按鈕上方，不蓋住它 */
+/* 撅閖���䠋擃睃�銝餅��蓥��對�銝滩�雿誩� */
 .map-page .maplibregl-ctrl-bottom-left:has(.maplibregl-compact-show) {
   bottom: calc(var(--nav-h) + 84px);
 }
 
-/* 右側工具列：貼右邊緣、按鈕之間留 12 px，點樹時比較不會誤按到 */
+/* �喳�撌亙��梹�鞎澆𢰧�羓楠����蓥��梶� 12 px嚗屸�璅寞�瘥磰�銝齿�隤斗��� */
 .map-tools {
   right: 4px;
   gap: 12px;
@@ -5650,7 +5650,7 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   min-height: 48px;
 }
 
-/* 樹洞附近的樹：方位與樹牌編號讓每一列分得出來 */
+/* 璅寞������邦嚗𡁏䲮雿滩�璅寧�蝺刻�霈𤘪�銝��堒�敺堒枂靘� */
 .nearby-tag {
   font-variant-numeric: tabular-nums;
 }
@@ -5658,7 +5658,7 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   white-space: nowrap;
 }
 
-/* ---------- 新手引導與我的 ---------- */
+/* ---------- �唳�撘訫������ ---------- */
 
 .tour-sub {
   margin: 10px 0 2px;
@@ -5666,7 +5666,7 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   font-family: var(--font-voice);
 }
 
-/* 12 區 3 欄、每格 44 px 高；「其他」整排。360 px 寬下每格約 100 px，「萬華區」「其他（不在臺北市）」都放得下 */
+/* 12 �� 3 甈������ 44 px 擃矋����隞硔�齿㟲�鉝��360 px 撖砌�瘥𤩺聢蝝� 100 px嚗䎚�諹𨯬�臬��溻���隞吔�銝滚銁�箏�撣���漤��曉�銝� */
 .district-picker {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -5739,21 +5739,21 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   margin: 0 0 12px;
 }
 
-/* 第 0 步比較高（動物 + 12 區）：按鈕固定在抽屜底部，不用捲到最下面才找得到「就牠了」 */
+/* 蝚� 0 甇交�頛��嚗���� + 12 ��嚗㚁��厰��箏��冽𡂝撅𨅯��剁�銝滨鍂�脣���銝钅𢒰�齿𪄳敺堒���停�牐��� */
 .tour-actions.sticky {
   position: sticky;
   bottom: -20px;
   z-index: 1;
   margin: 8px -16px -20px;
-  /* 下緣要高過導覽中間浮出的掃樹牌圓鈕（約 34 px）再留 12 px：「先跳過」「之後再說」不會貼到或蓋到它 */
+  /* 銝讠楠閬���𤾸�閬賭葉�𤘪筑�箇���邦����𤏪�蝝� 34 px嚗匧��� 12 px嚗𠾼���頝喲��溻�䔶�敺��隤芥�滢���票�唳��见�摰� */
   padding: 10px 16px max(46px, env(safe-area-inset-bottom));
   background: var(--card);
   box-shadow: 0 -8px 10px -8px rgba(44, 58, 46, 0.2);
 }
 
-/* ---------- 光點規則與樹況回報 ---------- */
+/* ---------- �厰�閬誩���邦瘜���� ---------- */
 
-/* 回報類別：五個一鍵選，一欄排開，方便單手點 */
+/* �𧼮𥼚憿𧼮ê̌嚗帋��衤��菟�嚗䔶�甈���页��嫣噶�格�暺� */
 .report .kind-pick {
   grid-template-columns: 1fr;
 }
@@ -5805,7 +5805,7 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   color: #5a5444;
 }
 
-/* GM 光點規則：分組小標與每項的說明 */
+/* GM �厰�閬誩�嚗𡁜�蝯��璅躰�瘥誯���牧�� */
 .gm-rules h3 {
   margin: 14px 0 4px;
   font-size: 1rem;
@@ -5821,9 +5821,9 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   color: var(--muted, #6b6455);
 }
 
-/* ---------- 導覽與集章冊 ---------- */
+/* ---------- 撠舘汗���蝡惩� ---------- */
 
-/* 集章冊頂端的「集章／探索」：比下面的「地圖／依取得時間」重，是整個頁面的兩個區 */
+/* ����𢠃�蝡舐��屸�蝡𩤃��Ｙ揣�㵪�瘥𥪯��Ｙ���𧑐�吔�靘嘥�敺埈��瓐�漤�嚗峕糓�游�钅��Ｙ��拙�见� */
 .stamps-page > .segmented {
   margin: 4px 0 12px;
 }
@@ -5838,7 +5838,7 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   border-radius: var(--radius);
 }
 
-/* 地圖／依取得時間：放在「地圖」卡片的頂端（卡片內的一列），淡一點（只是換看法），不浮在畫面上 */
+/* �啣�嚗譍��硋����嚗𡁏𦆮�具��𧑐�硔�滚㨃�����垢嚗�㨃�������梹�嚗峕楚銝�暺痹��芣糓�𤤿�瘜𤏪�嚗䔶�瘚桀銁�恍𢒰銝� */
 .atlas-head {
   display: flex;
   align-items: center;
@@ -5847,7 +5847,7 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   padding: 2px 6px;
 }
 
-/* 依取得時間：沒有地圖卡片，自己就是一列 */
+/* 靘嘥�敺埈��橒�瘝埝��啣��∠�嚗諹䌊撌勗停�臭��� */
 .atlas-head.standalone {
   padding: 0;
   margin: 4px 0 8px;
@@ -5859,7 +5859,7 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   background: transparent;
 }
 
-/* 卡片裡不需要再圍一圈膠囊：選中的那顆自己就是框，省下上下各一圈 */
+/* �∠�鋆∩���閬���滢�����𠺪��訾葉���憿�䌊撌勗停�舀�嚗𣬚�銝衤�銝见�銝��� */
 .atlas-panel > .atlas-head .segmented {
   padding: 0;
   border: 0;
@@ -5876,7 +5876,7 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   font-weight: 700;
 }
 
-/* 一區還沒有章：虛線的空章加一句邀請，不排一整列 0 */
+/* 銝�������厩�嚗朞�蝺𡁶�蝛箇��牐��仿�隢页�銝齿�銝��游� 0 */
 .stamp-waiting {
   display: flex;
   align-items: center;
@@ -5900,7 +5900,7 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   opacity: 0.7;
 }
 
-/* 內圈：像章面的圈線，等著被蓋上 */
+/* �批�嚗𡁜�蝡𣳇𢒰���蝺𡄯�蝑㕑�鋡怨�銝� */
 .stamp-ghost::after {
   content: '';
   position: absolute;
@@ -5919,7 +5919,7 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   min-height: 44px;
 }
 
-/* 還沒點亮的里：只有名字和一格淡虛線框，不寫「0／N 棵」 */
+/* ���暺硺漁���嚗𡁜蘨�匧�摮堒�銝��潭楚�𤤿�獢��銝滚神��0嚗𦮗 璉萸�� */
 .village-row.untouched .village-row-name {
   color: var(--muted);
   font-weight: 600;
@@ -5930,7 +5930,7 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   border: 1px dashed var(--stamp-rim);
 }
 
-/* 新手任務：整列是一個連結（≥ 44 px），不是只有字是連結 */
+/* �唳�隞餃�嚗𡁏㟲�埈糓銝��钅���嚗�竉 44 px嚗㚁�銝齿糓�芣�摮埈糓��� */
 .tasks li a.task-row {
   display: flex;
   gap: 10px;
@@ -5973,7 +5973,7 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   display: block;
 }
 
-/* 圖鑑卡的「看這棵樹 ›」：一整列 44 px */
+/* �㚚��∠��𣬚��蹱ㄤ璅� �箝�㵪�銝��游� 44 px */
 .tile-tree-link {
   display: flex;
   align-items: center;
@@ -5995,9 +5995,9 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   outline-offset: 0;
 }
 
-/* ---------- 光點規則與樹況回報 ---------- */
+/* ---------- �厰�閬誩���邦瘜���� ---------- */
 
-/* 回報類別：五個一鍵選，一欄排開，方便單手點 */
+/* �𧼮𥼚憿𧼮ê̌嚗帋��衤��菟�嚗䔶�甈���页��嫣噶�格�暺� */
 .report .kind-pick {
   grid-template-columns: 1fr;
 }
@@ -6049,7 +6049,7 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   color: #5a5444;
 }
 
-/* GM 光點規則：分組小標與每項的說明 */
+/* GM �厰�閬誩�嚗𡁜�蝯��璅躰�瘥誯���牧�� */
 .gm-rules h3 {
   margin: 14px 0 4px;
   font-size: 1rem;
@@ -6065,9 +6065,9 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   color: var(--muted, #6b6455);
 }
 
-/* ---------- 集章冊與迷霧 ---------- */
+/* ---------- ����𡃏�餈琿𧊅 ---------- */
 
-/* 全市地圖上面的一行：我的區的進度，加一顆跳到卡片的鈕 */
+/* �典��啣�銝𢠃𢒰���銵䕘��𤑳������脣漲嚗��銝�憿�歲�啣㨃����� */
 .atlas-home {
   display: flex;
   align-items: center;
@@ -6090,19 +6090,19 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   color: var(--green-ink);
 }
 
-/* 里列表：還沒走過的收在一顆按鈕後面 */
+/* ���銵剁����韏圈���𤣰�其�憿���訫��� */
 .village-untouched-toggle {
   margin-top: 8px;
 }
 
-/* 圖例放在地圖上面：地圖下緣不再被中間的掃樹牌鈕蓋住 */
+/* �碶��曉銁�啣�銝𢠃𢒰嚗𡁜𧑐�碶�蝺���滩◤銝剝����璅寧��閗�雿� */
 .city-map > .atlas-legend {
   gap: 2px 10px;
   padding: 4px 10px;
   border-bottom: 1px dashed var(--stamp-rim);
 }
 
-/* 第一屏要塞得下摘要、地圖和卡片標題：這幾個間距收緊 */
+/* 蝚砌�撅讛�憛𧼮�銝𧢲�閬���𧑐�硋��∠�璅䠷�嚗𡁻�坔嗾�钅�頝脲𤣰蝺� */
 .stamps-page .atlas {
   margin-top: 4px;
 }
@@ -6115,7 +6115,7 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   margin-top: 8px;
 }
 
-/* 已集到的章數：併在「我的區」那一行的第二行；沒有我的區時在切換鈕右邊 */
+/* 撌脤��啁�蝡䭾彍嚗帋蔥�具�峕�����漤�銝�銵𣬚�蝚砌�銵䕘�瘝埝��𤑳�����銁����訫𢰧�� */
 .home-count {
   display: block;
   color: var(--muted);
@@ -6136,9 +6136,9 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   text-wrap: pretty;
 }
 
-/* ---------- 新手、回報、我的 ---------- */
+/* ---------- �唳�����晞����� ---------- */
 
-/* 「用目前位置」：整排的次要按鈕（白底、綠框、定位圖示），不是選項——只有真正選到的那一區才填色 */
+/* �𣬚鍂�桀�雿滨蔭�㵪��湔���活閬���𤏪��賢����獢����雿滚�蝷綽�嚗䔶��舫����婙�𥪜蘨�厩�甇���啁�������滚‵�� */
 .district-here {
   grid-column: 1 / -1;
   gap: 6px;
@@ -6152,8 +6152,8 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   flex: none;
 }
 
-/* 第 0 步的第二個小步驟「你在哪一區？」：定位鈕、12 區、其他、提示、按鈕都要在不捲動下看得到（390×664、360×740）。
-   這一步用不到地圖，抽屜可以長到導覽上方 72 px；標題與提示收緊。 */
+/* 蝚� 0 甇亦�蝚砌��见�甇仿��䔶��典𪑛銝���嚗麄�㵪�摰帋��𨰻��12 �����隞硔���蝷箝����閖�閬�銁銝齿㬢�蓥��见��堆�390�664��360�740嚗剹��
+   �嗘�甇亦鍂銝滚��啣�嚗峕𡂝撅𨅯虾隞仿𩑈�啣�閬賭��� 72 px嚗𥟇�憿諹��鞟內�嗥��� */
 .tour-sheet[data-sub='district'] h2 {
   margin: 2px 0 2px;
 }
@@ -6180,7 +6180,7 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   margin-top: 4px;
 }
 
-/* 「我的」換一區：選到的那格捲進來時，要避開底部導覽和中間凸起的掃樹牌鈕（導覽高 + 40 px） */
+/* �峕����齿�銝���嚗𡁻��啁���聢�脤�脖����閬���见��典�閬賢�銝剝��貉絲���璅寧��𤏪�撠舘汗擃� + 40 px嚗� */
 .me-district-box .district-chip,
 .me-district-box .district-here,
 .me-district-box .district-other,
@@ -6188,13 +6188,13 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   scroll-margin-bottom: calc(var(--nav-h) + 40px);
 }
 
-/* 樹況回報在樹旁以外時：下一步是去掃樹牌 */
+/* 璅寞��𧼮𥼚�冽邦��誑憭𡝗�嚗帋�銝�甇交糓�餅�璅寧� */
 .report-scan {
   margin-top: 10px;
 }
 
-/* 照片授權與出處連結：字還是小字，但每個連結是 44 px 高的整列點擊範圍。
-   作者那行獨佔一列，兩個連結排在下一列，總高度和三行小字差不多 */
+/* �抒������枂�閖���嚗𡁜���糓撠誩�嚗䔶�瘥誩�钅����� 44 px 擃条��游�暺墧�蝭����
+   雿𡏭���銵𣬚崕雿𥪯��梹��拙�钅����鍦銁銝衤��梹�蝮賡�摨血�銝㕑�撠誩�撌桐�憭� */
 .carousel-credit {
   gap: 0 18px;
   padding-bottom: 0;
@@ -6210,9 +6210,9 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   min-height: 44px;
 }
 
-/* ---------- 打卡後的心情（只有選擇介面出現 emoji） ---------- */
+/* ---------- �枏㨃敺𣬚�敹��嚗�蘨�厰�����Ｗ枂�� emoji嚗� ---------- */
 
-/* 「我的」展開的選擇器（radiogroup，4 欄） */
+/* �峕����滚��讠��豢��剁�radiogroup嚗�4 甈�� */
 .mood-picker {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -6274,7 +6274,7 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   margin-top: 8px;
 }
 
-/* 樹洞卡上方的心情列：小按鈕排成可以折行的一列，點了就存 */
+/* 璅寞��∩��寧�敹���梹�撠𤩺��閙��𣂼虾隞交�銵𣬚�銝��梹�暺硺�撠勗� */
 .whisper-mood {
   margin: 10px 0 2px;
 }
@@ -6324,7 +6324,7 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   display: grid;
   place-items: center;
   flex: none;
-  /* 每個 emoji 都放在同樣大的圓形淺底上：系統 emoji 的顏色深淺不一，圓底讓它們看起來是一組 */
+  /* 瘥誩�� emoji �賣𦆮�典�璅�之���敶Ｘ滓摨蓥�嚗𡁶頂蝯� emoji ����脫楛瘛箔�銝�嚗��摨閗�摰��𤑳�韏瑚��臭�蝯� */
   width: 24px;
   height: 24px;
   border-radius: 50%;
@@ -6337,7 +6337,7 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   background: rgba(255, 255, 255, 0.92);
 }
 
-/* 留完樹洞後縮成一行：心情：疲憊・改 */
+/* �坔�璅寞�敺𣬚葬�𣂷�銵䕘�敹��嚗𡁶魿�𨳍��� */
 .mood-collapsed {
   display: flex;
   align-items: center;
@@ -6363,14 +6363,14 @@ body:not(:has(.bottom-nav)) .migrate-banner {
 }
 
 .mood-edit::before {
-  content: '・';
+  content: '��';
   color: var(--muted);
   text-decoration: none;
   display: inline-block;
   margin-right: 2px;
 }
 
-/* 選中：實心深綠底、白字、一個勾（不只靠邊框） */
+/* �訾葉嚗𡁜祕敹�楛蝬惩���蒾摮𨰜����见㗲嚗���芷��𦠜�嚗� */
 .mood-chip.on {
   border-color: var(--green-ink);
   background: var(--green-ink);
@@ -6378,7 +6378,7 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   font-weight: 600;
 }
 
-/* 勾放在角上，不增加按鈕的寬度（選了不會讓整列重新折行） */
+/* �暹𦆮�刻�銝𠺪�銝滚��䭾��閧�撖砍漲嚗��鈭������游��齿鰵�䁅�嚗� */
 .mood-chip-check {
   position: absolute;
   top: -6px;
@@ -6406,7 +6406,7 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   text-wrap: pretty;
 }
 
-/* 焦慮那句是邀請一次呼吸：一個圓點，約 4 秒脹大、4 秒縮小（純 CSS，減少動態時不動） */
+/* �行���蘂�舫�隢衤�甈∪鐤�賂�銝��见�暺痹�蝝� 4 蝘坿�憭扼��4 蝘垍葬撠𧶏�蝝� CSS嚗峕�撠穃��𧢲�銝滚�嚗� */
 .breath-dot {
   flex: none;
   width: 14px;
@@ -6434,7 +6434,7 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   }
 }
 
-/* 我的：心情列接在動物、區的下面，同一種虛線分隔 */
+/* �𤑳�嚗𡁜�����亙銁�閧��������ｇ��䔶�蝔株�蝺𡁜��� */
 .me-mood {
   margin-top: 8px;
   padding-top: 8px;
@@ -6454,8 +6454,8 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   text-align: left;
 }
 
-/* 矮螢幕（360×640 一類）：第一屏的三列（動物、區、心情）要整個在導覽中間浮出的掃樹牌圓鈕上面，
-   不能被它蓋掉一半。小圖、列距收一點，省下約 50 px */
+/* �株攟撟𤏪�360�640 銝�憿痹�嚗𡁶洵銝�撅讐�銝匧�嚗���押���������閬�㟲�见銁撠舘汗銝剝�瘚桀枂���璅寧��㯄�銝𢠃𢒰嚗�
+   銝滩�鋡怠��𧢲�銝��𨳍����硔���頝脲𤣰銝�暺痹����蝝� 50 px */
 @media (max-height: 700px) {
   .me-scene {
     min-height: 108px;
@@ -6478,12 +6478,12 @@ body:not(:has(.bottom-nav)) .migrate-banner {
 }
 
 
-/* 地圖署名連結：深綠（--green 在淡底上只有約 4.2:1） */
+/* �啣�蝵脣����嚗𡁏楛蝬𩤃�--green �冽楚摨蓥��芣�蝝� 4.2:1嚗� */
 .maplibregl-ctrl-attrib a {
   color: var(--green-ink);
 }
 
-/* ---------- 關於曦語 ---------- */
+/* ---------- �𨀣䲰�西� ---------- */
 
 .about-section {
   margin: 20px 0 0;
@@ -6621,13 +6621,13 @@ body:not(:has(.bottom-nav)) .migrate-banner {
   overflow-wrap: anywhere;
 }
 
-/* 內文裡的連結用深綠（--green 在紙色上只有 4.46:1，不到 4.5:1） */
+/* �扳�鋆∠�����冽楛蝬𩤃�--green �函��脖��芣� 4.46:1嚗䔶��� 4.5:1嚗� */
 .about-link {
   color: var(--green-ink);
   text-decoration: underline;
 }
 
-/* 頁尾溫和的下一步：一顆主要、一顆次要，不催促 */
+/* ��偏皞怠����銝�甇伐�銝�憿�蜓閬����憿�活閬��銝滚�靽� */
 .about-next {
   margin: 28px 0 24px;
   text-align: center;
