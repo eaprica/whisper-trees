@@ -58,7 +58,7 @@
 | `avatar-blue-magpie`（已交件） | 96×96 | 192×192 | `public/assets/ph/avatar-blue-magpie.svg` | 地圖上代表你、新手引導、我的 | `src/features/avatar/animals.ts:21` | 地圖人物：臺灣藍鵲。火爆脾氣，長尾巴。規格同上。五隻動物都帶著同一片發光葉子，點狀眼睛、臉部留白。 |
 | `avatar-malayan-night-heron`（已交件） | 96×96 | 192×192 | `public/assets/ph/avatar-malayan-night-heron.svg` | 地圖上代表你、新手引導、我的 | `src/features/avatar/animals.ts:22` | 地圖人物：黑冠麻鷺。呆萌的大笨鳥，常定格發呆、偶爾歪頭。規格同上。五隻動物都帶著同一片發光葉子，點狀眼睛、臉部留白。 |
 | `avatar-pangolin`（已交件） | 96×96 | 192×192 | `public/assets/ph/avatar-pangolin.svg` | 地圖上代表你、新手引導、我的 | `src/features/avatar/animals.ts:23` | 地圖人物：穿山甲。容易緊張，緊張時捲成球。規格同上。五隻動物都帶著同一片發光葉子，點狀眼睛、臉部留白。 |
-| `tree-focus`（已交件） | 360×400 | 720×800 | `public/assets/ph/tree-focus.svg` | 地圖點樹後的拉近畫面（中間的大樹） | `src/features/map/TreeFocusView.tsx:114` | 2.5D 蠟筆繪本風的一棵大樹：圓潤蓬鬆的綠色樹冠占上方三分之二，粗短的褐色樹幹，樹根坐在淡淡的圓形草地上；透明背景、主體置中，樹冠上要留得下 5 個圓形按鈕（文字疊在上面仍看得清楚） |
+| `tree-focus`（已交件） | 360×400 | 720×800 | `public/assets/ph/tree-focus.svg` | 地圖點樹後的拉近畫面（中間的大樹） | `src/features/map/TreeFocusView.tsx:121` | 2.5D 蠟筆繪本風的一棵大樹：圓潤蓬鬆的綠色樹冠占上方三分之二，粗短的褐色樹幹，樹根坐在淡淡的圓形草地上；透明背景、主體置中，樹冠上要留得下 5 個圓形按鈕（文字疊在上面仍看得清楚） |
 | `map-tree-near`（已交件） | 64×72 | 128×144 | `public/assets/ph/map-tree-near.svg` | 地圖拉近時，感應圈內的樹（可以摸） | `src/pages/MapPage.tsx:301` | 2.5D 蠟筆風的小樹圖示：蓬鬆的亮綠色樹冠、褐色樹幹，腳下一個淡綠色圓形底座；透明背景、底座中心對準樹的位置（圖片底部中央） |
 | `map-tree-far`（已交件） | 64×72 | 128×144 | `public/assets/ph/map-tree-far.svg` | 地圖拉近時，感應圈外的樹 | `src/pages/MapPage.tsx:300` | 同上，樹冠改成灰藍綠色、彩度低，底座同樣淡綠；看得出是同一種樹，但比較安靜 |
 | `map-met-flowers`（已交件） | 64×72 | 128×144 | `public/assets/ph/map-met-flowers.svg` | 地圖拉近時，今天互動過的樹 | `src/pages/MapPage.tsx:306` | 疊在樹的圖示上的幾朵小花（粉、黃、淡紫），長在底座左右兩側、不擋樹幹；尺寸與底部對齊和 map-tree-near 相同，其餘透明 |
@@ -140,3 +140,27 @@
 | `public/assets/team/mint.webp` | `src/features/about/about.ts:51` |
 | `public/assets/team/plus1.webp` | `src/features/about/about.ts:43` |
 | `public/assets/team/ray.webp` | `src/features/about/about.ts:35` |
+| `public/assets/trees/alstonia_scholaris.webp` | （尚未使用） |
+| `public/assets/trees/artocarpus_altilis.webp` | （尚未使用） |
+| `public/assets/trees/bischofia_javanica.webp` | （尚未使用） |
+| `public/assets/trees/bombax_ceiba.webp` | （尚未使用） |
+| `public/assets/trees/camphora_officinarum.webp` | （尚未使用） |
+| `public/assets/trees/cassia_fistula.webp` | （尚未使用） |
+| `public/assets/trees/ficus_benjamina.webp` | （尚未使用） |
+| `public/assets/trees/ficus_microcarpa.webp` | （尚未使用） |
+| `public/assets/trees/fraxinus_griffithii.webp` | （尚未使用） |
+| `public/assets/trees/garcinia_subelliptica.webp` | （尚未使用） |
+| `public/assets/trees/grevillea_robusta.webp` | （尚未使用） |
+| `public/assets/trees/koelreuteria_elegans.webp` | （尚未使用） |
+| `public/assets/trees/lagerstroemia_speciosa.webp` | （尚未使用） |
+| `public/assets/trees/liquidambar_formosana.webp` | （尚未使用） |
+| `public/assets/trees/livistona_chinensis.webp` | （尚未使用） |
+| `public/assets/trees/melaleuca_quinquenervia.webp` | （尚未使用） |
+| `public/assets/trees/melia_azedarach.webp` | （尚未使用） |
+| `public/assets/trees/osmanthus_fragrans.webp` | （尚未使用） |
+| `public/assets/trees/palaquium_formosanum.webp` | （尚未使用） |
+| `public/assets/trees/pongamia_pinnata.webp` | （尚未使用） |
+| `public/assets/trees/prunus.webp` | （尚未使用） |
+| `public/assets/trees/roystonea_regia.webp` | （尚未使用） |
+| `public/assets/trees/sapindus_mukorossi.webp` | （尚未使用） |
+| `public/assets/trees/terminalia_mantaly.webp` | （尚未使用） |
