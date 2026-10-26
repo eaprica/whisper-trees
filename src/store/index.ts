@@ -4,6 +4,7 @@
 //     讀取靠 onSnapshot 鏡射成下面的 State，寫入先樂觀更新記憶體、再用 batch 寫 Firestore（格式需符合 firestore.rules）。
 //     `seen`（提示點）只存在這台裝置，不上雲端。
 //   - localStorage：沒有 Firebase 設定、或 Vitest 時使用。同一台電腦的兩個分頁靠 storage 事件即時同步。
+// 樹洞例外：兩種後端都只存在這台裝置（WHISPER_KEY），永遠不上雲端。
 //     雲端模式連不上（登入失敗、Firestore 斷線、額度用完）不會退回這裡：
 //     頂端顯示連線狀態（session.connection）並一直重連，這段時間的寫入由 Firestore 排著、連回來同步。
 // 非承辦人在後台（/gov、/vendor、/gm）的改動只寫本機覆寫層（overlay.ts），不進雲端。
@@ -26,6 +27,8 @@ export type { ActiveTour, ActiveTourStop } from './activeTour'
 
 const KEY = LOCAL_KEY
 const SEEN_KEY = 'whisper-trees:seen'
+/** 樹洞：只存在這台裝置，雲端模式也一樣（不進 Firestore，管理者也看不到） */
+export const WHISPER_KEY = 'whisper-trees:whispers'
 
 export interface State {
   checkins: Checkin[]
@@ -53,13 +56,63 @@ const storage: Storage | null = (() => {
   }
 })()
 
-function read(): State {
+function readWhispers(): Record<string, Whisper[]> {
+  try {
+    const raw = storage?.getItem(WHISPER_KEY)
+    return raw ? JSON.parse(raw) : {}
+  } catch {
+    return {}
+  }
+}
+
+function saveWhispers(next: Record<string, Whisper[]>) {
+  try {
+    storage?.setItem(WHISPER_KEY, JSON.stringify(next))
+  } catch {
+    // 私密模式或空間不足：只留在記憶體
+  }
+}
+
+/** 請瀏覽器不要自動清掉這個網站的資料（樹洞只在本機，要留得久；Safari 加到主畫面時才比較可能答應） */
+function requestPersist() {
+  try {
+    void navigator.storage?.persist?.().catch(() => {})
+  } catch {
+    // ignore
+  }
+}
+
+function readRaw(): State {
   try {
     const raw = storage?.getItem(KEY)
     return raw ? { ...emptyState(), ...JSON.parse(raw) } : emptyState()
   } catch {
     return emptyState()
   }
+}
+
+/** 舊版把樹洞放在整份 State（KEY）裡：第一次載入時搬到 WHISPER_KEY，之後 KEY 不再存樹洞 */
+function moveLegacyWhispers(raw: State): Record<string, Whisper[]> {
+  const current = readWhispers()
+  const legacy = raw.whispers ?? {}
+  if (!Object.keys(legacy).length) return current
+  const merged: Record<string, Whisper[]> = { ...current }
+  for (const [treeId, list] of Object.entries(legacy)) {
+    const have = new Set((merged[treeId] ?? []).map((w) => `${w.at}:${w.text}`))
+    merged[treeId] = [...(merged[treeId] ?? []), ...list.filter((w) => !w.mock && !have.has(`${w.at}:${w.text}`))].sort((a, b) => a.at - b.at)
+  }
+  saveWhispers(merged)
+  try {
+    storage?.setItem(KEY, JSON.stringify({ ...raw, whispers: {} }))
+  } catch {
+    // ignore
+  }
+  return merged
+}
+
+function read(): State {
+  const raw = readRaw()
+  return { ...raw, whispers: moveLegacyWhispers(raw) }
 }
 
 let state = read()
@@ -76,7 +129,8 @@ function emit() {
 function write(next: State) {
   state = next
   try {
-    storage?.setItem(KEY, JSON.stringify(next))
+    // 樹洞另外存在 WHISPER_KEY
+    storage?.setItem(KEY, JSON.stringify({ ...next, whispers: {} }))
   } catch {
     // 私密模式或空間不足：只留在記憶體
   }
@@ -91,6 +145,9 @@ if (typeof window !== 'undefined') {
   window.addEventListener('storage', (e) => {
     if (!cloudOn && (e.key === KEY || e.key === null)) {
       state = read()
+      emit()
+    } else if (e.key === WHISPER_KEY) {
+      state = { ...state, whispers: readWhispers() }
       emit()
     }
   })
@@ -120,11 +177,13 @@ function setSeen(patch: Record<string, number>) {
 function startCloud() {
   cloudOn = true
   seen = loadSeen()
-  state = { ...emptyState(), seen }
+  const whispers = state.whispers
+  state = { ...emptyState(), seen, whispers }
   setSession({ backend: 'cloud', connection: 'ok', userReady: false })
   cloud.startCloud({
     onState(s) {
-      state = { ...s, seen }
+      // 樹洞不在雲端：一律用這台裝置上的
+      state = { ...s, seen, whispers: state.whispers }
       emit()
     },
     onConnection(connection) {
@@ -156,8 +215,13 @@ export function useStore<T>(selector: (s: State) => T): T {
   return useSyncExternalStore(subscribe, () => selector(state))
 }
 
-/** 清除這台裝置的資料。雲端模式：刪掉自己的樹洞與使用者文件、登出並重新載入。 */
+/** 清除這台裝置的資料（含樹洞）。雲端模式：再刪掉自己的使用者文件、登出並重新載入。 */
 export function resetAll() {
+  try {
+    storage?.removeItem(WHISPER_KEY)
+  } catch {
+    // ignore
+  }
   if (cloudOn) {
     for (const k of [KEY, SEEN_KEY, OVERLAY_KEY]) {
       try {
@@ -307,14 +371,15 @@ export function whispersOf(treeId: string, s: State = state): Whisper[] {
   return [...demo, ...mine].sort((a, b) => b.at - a.at)
 }
 
+/** 留一句話在樹洞：只存在這台裝置（兩種後端都一樣，不上雲端） */
 export function addWhisper(treeId: string, text: string) {
   const t = text.trim().slice(0, 140)
   if (!t) return
-  if (cloudOn) return cloud.addWhisper(treeId, t)
-  update((s) => ({
-    ...s,
-    whispers: { ...s.whispers, [treeId]: [...(s.whispers[treeId] ?? []), { text: t, at: Date.now() }] },
-  }))
+  const whispers = { ...state.whispers, [treeId]: [...(state.whispers[treeId] ?? []), { text: t, at: Date.now() }] }
+  saveWhispers(whispers)
+  requestPersist()
+  state = { ...state, whispers }
+  emit()
 }
 
 export function visitedThisWeek(treeId: string, s: State = state): boolean {
@@ -475,8 +540,8 @@ export function dismissInAppNotice() {
 // ---------- 雲端帳號 ----------
 
 /** 使用者同意後，把這台裝置舊的本機紀錄搬到雲端 */
-export function migrateToCloud(withWhispers: boolean) {
-  cloud.migrate(withWhispers)
+export function migrateToCloud() {
+  cloud.migrate()
 }
 
 /** 登出（雲端的紀錄不刪）；會重新載入頁面 */

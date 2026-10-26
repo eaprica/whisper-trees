@@ -9,7 +9,6 @@ import {
   getDoc,
   serverTimestamp,
   setDoc,
-  Timestamp,
   writeBatch,
   type Firestore,
 } from 'firebase/firestore'
@@ -91,11 +90,10 @@ function summarize(l: LocalState): MigrationSummary {
     reports: (l.reports ?? []).filter((r) => !r.mock).length,
     checkins: (l.checkins ?? []).length,
     progress: !!(l.ext?.ledger?.length || l.ext?.inventory?.owned?.length),
-    whispers: Object.values(l.whispers ?? {}).reduce((n, list) => n + list.filter((w) => !w.mock).length, 0),
   }
 }
 
-const hasAnything = (s: MigrationSummary) => s.wishes + s.reports + s.checkins + s.whispers > 0 || s.progress
+const hasAnything = (s: MigrationSummary) => s.wishes + s.reports + s.checkins > 0 || s.progress
 
 /** 備份過了期限就刪掉 */
 export function pruneBackup() {
@@ -119,7 +117,7 @@ export function declineMigration() {
 const validDistrict = (d: string) => (TAIPEI_DISTRICTS as readonly string[]).includes(d)
 const ALLOWED_DETAILS = new Set(LEGACY_REPORT_DETAILS)
 
-export async function runMigration(db: Firestore, uid: string, withWhispers: boolean) {
+export async function runMigration(db: Firestore, uid: string) {
   const m = getSession().migration
   const l = readLocal()
   if (!m || m.running || !l) return
@@ -200,19 +198,7 @@ export async function runMigration(db: Firestore, uid: string, withWhispers: boo
     }
     if (Object.keys(patch).length) await setDoc(userRef, patch, { merge: true })
 
-    // 樹洞：只有勾選才搬
-    if (withWhispers) {
-      for (const [treeId, list] of Object.entries(l.whispers ?? {})) {
-        for (const w of list.filter((x) => !x.mock && x.text)) {
-          await setDoc(doc(collection(db, 'users', uid, 'whispers')), {
-            treeId: treeId.slice(0, 20),
-            text: w.text.slice(0, 140),
-            at: Timestamp.fromMillis(Math.min(w.at, Date.now() - 60_000)),
-            migrated: true,
-          })
-        }
-      }
-    }
+    // 樹洞不搬：只存在這台裝置（index.ts 載入時已搬到 WHISPER_KEY，下面刪 LOCAL_KEY 不會刪到）
 
     // 全部成功才清本機副本
     del(LOCAL_KEY)

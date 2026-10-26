@@ -9,7 +9,6 @@ export interface MigrationSummary {
   checkins: number
   /** 光點／造型紀錄 */
   progress: boolean
-  whispers: number
 }
 
 export interface Session {
