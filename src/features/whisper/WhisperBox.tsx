@@ -1,10 +1,9 @@
 import { useState, type ReactNode } from 'react'
-import { addWhisper, useSession } from '../../store'
+import { addWhisper } from '../../store'
 import { award } from '../game/ledger'
 
 /** mood：留完話之後那一句的心情（剛說完展開，之後縮成一行） */
 export function WhisperBox({ treeId, said, mood }: { treeId: string; said: string[]; mood: (open: boolean) => ReactNode }) {
-  const cloud = useSession().backend === 'cloud'
   const [text, setText] = useState('')
   const [writing, setWriting] = useState(said.length === 0)
   const [justSaid, setJustSaid] = useState<string | null>(null)
@@ -16,7 +15,7 @@ export function WhisperBox({ treeId, said, mood }: { treeId: string; said: strin
         <p className={`whisper-sent ${justSaid ? 'drift' : ''}`}>「{last}」</p>
         <p className="whisper-ack">樹收到了。</p>
         <p className="muted small">
-          {cloud ? '其他人看不到。存在曦語的雲端，不公開。下次回來，它會記得。' : '只有你看得到，不會上傳。下次回來，它會記得。'}
+          只有你看得到，只存在這支手機、不會上傳。下次回來，它會記得。
         </p>
         <button
           className="btn ghost again"
@@ -34,7 +33,7 @@ export function WhisperBox({ treeId, said, mood }: { treeId: string; said: strin
   return (
     <section className="whisper" aria-labelledby="whisper-title">
       <h2 id="whisper-title">樹洞</h2>
-      <p className="muted small">{cloud ? '其他人看不到。存在曦語的雲端，不公開。' : '只有你看得到。不會上傳，也不公開。'}</p>
+      <p className="muted small">只有你看得到。只存在這支手機，不會上傳，也不公開。</p>
       <form
         onSubmit={(e) => {
           e.preventDefault()

@@ -18,7 +18,7 @@
 |---|---|---|---|
 | 打卡、自己的許願清單、澆水紀錄、自己的回報清單 | `users/{uid}`：`checkins`、`myWishIds`、`watered`、`myReportIds` | 本人 | 本人 |
 | 光點流水帳、物品與造型、新手引導、心情、我的日記 | `users/{uid}`：`ledger`、`inventory`、`onboarding`、`mood`、`diary` | 本人 | 本人 |
-| 樹洞留言 | `users/{uid}/whispers/{id}` | 本人 | 本人新增、刪除；不能修改 |
+| 樹洞留言 | **不在 Firestore**：只存在這台裝置（localStorage `whisper-trees:whispers`）。舊版的 `users/{uid}/whispers/{id}` 不再讀寫，規則保留讓本人刪除 | — | — |
 | 許願 | `wishes/{id}` | 登入者 | 本人新增；進度（`history`）限白名單；原許願市民即時收到「樹洞」通知並可看時間軸 |
 | 澆水 | `wishes/{id}/waterings/{uid_日期}`、`wishStats/{id}.water` | 登入者 | 每人每天每個許願一次 |
 | 示範許願的進度 | `wishOverrides/{id}` | 登入者 | 白名單 |

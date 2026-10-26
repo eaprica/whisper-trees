@@ -4,7 +4,7 @@
 // 資料對應（State 欄位 ← 來源）
 //   wishes            ← wishes（使用者許願）＋ wishOverrides（示範許願的狀態歷程）＋ wishStats.water
 //   reports           ← reports（公開欄位）＋ reports/{id}/private/note（自己的；承辦人看全部）
-//   whispers          ← users/{uid}/whispers
+//   whispers          ← 不在雲端：樹洞只存在這台裝置（index.ts 的 WHISPER_KEY），這裡一律是空的
 //   checkins/watered/myWishIds ← users/{uid}
 //   ext.gm            ← config/gm        ext.vendor ← vendorOrders
 //   ext.ledger/inventory/onboarding/mood ← users/{uid}   ext.opinions ← notices/notice-1/opinions/{uid}
@@ -41,7 +41,7 @@ import { getAuthSnap, getFirebase, signOutAndWipe, startAuth, subscribeAuth } fr
 import { emptyOverlay, loadOverlay, OVERLAY_KEY, saveOverlay, type Overlay } from './overlay'
 import { SEED } from './seedData'
 import { getSession, setSession } from './session'
-import { LEGACY_REPORT_DETAILS, TAIPEI_DISTRICTS, WISH_REASONS, type Checkin, type StatusEvent, type TreeReport, type Whisper, type Wish } from './types'
+import { LEGACY_REPORT_DETAILS, TAIPEI_DISTRICTS, WISH_REASONS, type Checkin, type StatusEvent, type TreeReport, type Wish } from './types'
 import type { State } from './index'
 import { checkMigration, runMigration } from './migrate'
 import { connectionAfter, probeResultOf, retryDelay, UNAVAILABLE_GRACE_MS, unavailableStep, type Connection } from './unavailable'
@@ -117,7 +117,6 @@ let vendorDocs: Record<string, unknown> = {}
 let gmDoc: unknown
 let opinions: Record<string, string> = {}
 let userDoc: UserDoc = emptyUser()
-let whisperRows: { id: string; treeId: string; text: string; at: number; migrated?: boolean }[] = []
 let overlay: Overlay = emptyOverlay()
 /** 規則擋下的澆水（今天已經澆過）：畫面上要維持「已澆好」 */
 const forcedWatered = new Set<string>()
@@ -189,12 +188,6 @@ function rebuildUser() {
   S = { ...S, checkins: userDoc.checkins, watered, myWishIds }
 }
 
-function rebuildWhispers() {
-  const by: Record<string, Whisper[]> = {}
-  for (const r of [...whisperRows].sort((a, b) => a.at - b.at)) (by[r.treeId] ??= []).push({ text: r.text, at: r.at })
-  S = { ...S, whispers: by }
-}
-
 let vendorMemo: { a: unknown; b: unknown; use: boolean; out: Record<string, unknown> } | null = null
 function mergedVendor(): Record<string, unknown> {
   const use = overlayOn()
@@ -224,7 +217,6 @@ function rebuildAll() {
   rebuildWishes()
   rebuildReports()
   rebuildUser()
-  rebuildWhispers()
   rebuildExt()
   commit()
 }
@@ -489,19 +481,6 @@ function startUser(forUid: string) {
       onListenError,
     ),
   )
-  listen(
-    query(collection(db, 'users', forUid, 'whispers'), orderBy('at', 'desc'), limit(LIMIT)),
-    (snap) => {
-      whisperRows = []
-      snap.forEach((d) => {
-        const x = d.data({ serverTimestamps: 'estimate' })
-        whisperRows.push({ id: d.id, treeId: x.treeId, text: x.text, at: ms(x.at) })
-      })
-      rebuildWhispers()
-      commit()
-    },
-    userSubs,
-  )
   for (const noticeId of NOTICE_IDS) {
     userSubs.push(
       onSnapshot(
@@ -559,7 +538,6 @@ function switchUser(next: string) {
   uid = next
   userDoc = emptyUser()
   setSession({ userReady: false })
-  whisperRows = []
   opinions = {}
   notes = {}
   noteTried.clear()
@@ -686,8 +664,8 @@ export function notReady(): boolean {
   return !uid
 }
 
-export function migrate(withWhispers: boolean) {
-  if (uid) void runMigration(db, uid, withWhispers)
+export function migrate() {
+  if (uid) void runMigration(db, uid)
 }
 
 export function createWish(input: Omit<Wish, 'id' | 'createdAt' | 'seedWater' | 'water' | 'history' | 'mock'>): Wish {
@@ -810,18 +788,6 @@ export function recordCheckin(c: Checkin) {
   queueUser({ checkins: [item] })
 }
 
-export function addWhisper(treeId: string, text: string) {
-  const at = Date.now()
-  whisperRows = [...whisperRows, { id: `tmp-${at}`, treeId, text, at }]
-  rebuildWhispers()
-  commit()
-  void awaitUid().then((u) =>
-    setDoc(doc(collection(db, 'users', u, 'whispers')), { treeId: treeId.slice(0, 20), text, at: serverTimestamp() }).catch((e) =>
-      onWriteError('addWhisper', e),
-    ),
-  )
-}
-
 const ALLOWED_DETAILS = new Set(LEGACY_REPORT_DETAILS)
 
 export function addReport(r: Omit<TreeReport, 'id' | 'at'>): TreeReport {
@@ -908,7 +874,7 @@ export function setExt(key: string, value: unknown) {
   }
 }
 
-/** 清除自己在雲端的資料（樹洞與使用者文件），再登出並清掉本機快取。 */
+/** 清除自己在雲端的資料（使用者文件；舊版留在雲端的樹洞也一起刪），再登出並清掉本機快取。 */
 export async function resetCloud() {
   const owner = uid
   const database = db
