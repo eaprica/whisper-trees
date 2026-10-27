@@ -2,7 +2,7 @@
 
 import type { GatewayRequest } from './gateway'
 
-export const API_ORIGIN = 'https://whisper-trees-demo.southern-light.dev'
+export const API_ORIGIN = 'https://whispertrees.eaprica.com'
 export const MCP_URL = `${API_ORIGIN}/mcp`
 
 export interface ParamDoc {
